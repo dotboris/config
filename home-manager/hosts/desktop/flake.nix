@@ -31,10 +31,10 @@
 
       modules = [
         ./home.nix
-        ../modules/base.nix
-        ../modules/neovim.nix
-        ../modules/git.nix
-        ../modules/shell.nix
+        ../../modules/base.nix
+        ../../modules/neovim.nix
+        ../../modules/git.nix
+        ../../modules/shell.nix
       ];
 
       # Optionally use extraSpecialArgs
