@@ -23,11 +23,6 @@
       inherit system;
       config.allowUnfree = true;
     };
-    getFlakePkg = {
-      flake,
-      packageName ? "default",
-    }:
-      flake.outputs.packages.${system}.${packageName};
   in {
     homeConfigurations."dotboris" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
@@ -43,7 +38,7 @@
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix
       extraSpecialArgs = {
-        cdo = getFlakePkg {flake = cdo;};
+        cdo = cdo.packages.${system}.default;
       };
     };
 
