@@ -24,12 +24,29 @@
     enableFishIntegration = true;
     enableNushellIntegration = true;
     settings = {
-      aws.disabled = true;
+      # Simple icons
+      battery = {
+        full_symbol = "• ";
+        charging_symbol = "⇡ ";
+        discharging_symbol = "⇣ ";
+        unknown_symbol = "❓ ";
+        empty_symbol = "❗ ";
+      };
+      erlang.symbol = "ⓔ ";
+      pulumi.symbol = "🧊 ";
+
       nix_shell.format = "via [$symbol]($style) ";
       nodejs = {
         symbol = "[⬢](bold green) ";
         version_format = "v\${major}";
       };
+
+      # Disable noisy stuff
+      aws.disabled = true;
+      python.disabled = true;
+      golang.disabled = true;
+      buf.disabled = true;
+      docker.disabled = true;
     };
   };
 
