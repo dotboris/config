@@ -1,6 +1,7 @@
 # Setup shells the way I like them with the right utils in place and everything
 {
   pkgs,
+  lib,
   cdo,
   ...
 }: {
@@ -46,7 +47,6 @@
       python.disabled = true;
       golang.disabled = true;
       buf.disabled = true;
-      docker.disabled = true;
     };
   };
 
@@ -54,6 +54,13 @@
     enable = true;
 
     interactiveShellInit = ''
+      ${lib.strings.optionalString pkgs.stdenv.isDarwin ''
+        fish_add_path --prepend --move --path /opt/homebrew/bin
+      ''}
+      fish_add_path --prepend --move --path ~/go/bin
+      fish_add_path --prepend --move --path ~/.cargo/bin
+      fish_add_path --prepend --move --path ~/.local/bin
+      fish_add_path --prepend --move --path /nix/var/nix/profiles/default/bin
       fish_add_path --prepend --move --path ~/.nix-profile/bin
     '';
 

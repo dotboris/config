@@ -32,6 +32,10 @@
       # Specify your home configuration modules here, for example,
       # the path to your home.nix.
       modules = [
+        ../../modules/base.nix
+        ../../modules/neovim.nix
+        ../../modules/git.nix
+        ../../modules/shell.nix
         ./home.nix
         ./git.nix
       ];

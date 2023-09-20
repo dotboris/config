@@ -1,7 +1,11 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.git = {
-    userName = "Boris Bera";
-    userEmail = "bbera@coveo.com";
+    userName = lib.mkForce "Boris Bera";
+    userEmail = lib.mkForce "bbera@coveo.com";
 
     extraConfig = {
       credential."https://github.com".helper = "${pkgs.gh}/bin/gh auth git-credential";
