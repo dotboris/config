@@ -36,7 +36,13 @@
     pkgs.nixd
     pkgs.nil
     pkgs.alejandra
+
+    pkgs.discord-canary
   ];
+
+  # Linux specific tweaks & integrations.
+  targets.genericLinux.enable = true;
+  xdg.mime.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
