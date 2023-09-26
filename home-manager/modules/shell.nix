@@ -53,15 +53,17 @@
   programs.fish = {
     enable = true;
 
+    # PATH entries are added directly to the PATH var and to fish_user_paths to
+    # ensure that nix shells can prepend stuff to the path correctly.
     interactiveShellInit = ''
       ${lib.strings.optionalString pkgs.stdenv.isDarwin ''
-        fish_add_path --prepend --move --path /opt/homebrew/bin
+        fish_add_path --prepend --path /opt/homebrew/bin
       ''}
-      fish_add_path --prepend --move --path ~/go/bin
-      fish_add_path --prepend --move --path ~/.cargo/bin
-      fish_add_path --prepend --move --path ~/.local/bin
-      fish_add_path --prepend --move --path /nix/var/nix/profiles/default/bin
-      fish_add_path --prepend --move --path ~/.nix-profile/bin
+      fish_add_path --prepend --path ~/go/bin
+      fish_add_path --prepend --path ~/.cargo/bin
+      fish_add_path --prepend --path ~/.local/bin
+      fish_add_path --prepend --path /nix/var/nix/profiles/default/bin
+      fish_add_path --prepend --path ~/.nix-profile/bin
     '';
 
     shellAbbrs = {
