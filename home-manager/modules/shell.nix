@@ -8,13 +8,17 @@
   home.packages = [
     # Day to day utils
     cdo
+
     pkgs.ripgrep
     pkgs.fd
-    pkgs.bat
     pkgs.sd
+    pkgs.ast-grep
+
     pkgs.jq
     pkgs.yq
+
     pkgs.jless
+    pkgs.bat
 
     # For fish.fzf plugin
     pkgs.fzf
