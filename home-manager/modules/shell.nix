@@ -40,7 +40,7 @@
       erlang.symbol = "ⓔ ";
       pulumi.symbol = "🧊 ";
 
-      nix_shell.format = "via [$symbol]($style) ";
+      nix_shell.format = "via [$symbol]($style)";
       nodejs = {
         symbol = "[⬢](bold green) ";
         version_format = "v\${major}";
