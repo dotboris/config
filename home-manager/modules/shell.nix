@@ -51,6 +51,8 @@
       python.disabled = true;
       golang.disabled = true;
       buf.disabled = true;
+      package.disabled = true;
+      docker_context.disabled = true;
     };
   };
 
