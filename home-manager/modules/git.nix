@@ -19,6 +19,11 @@
       init.defaultBranch = "main";
     };
 
+    aliases = {
+      poil = "pull";
+      poule = "pull";
+    };
+
     ignores = [
       ".vscode"
       ".alt.toml"
