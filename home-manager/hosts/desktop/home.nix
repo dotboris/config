@@ -37,7 +37,7 @@
     pkgs.nil
     pkgs.alejandra
 
-    pkgs.discord-canary
+    pkgs.webcord
   ];
 
   # Linux specific tweaks & integrations.
