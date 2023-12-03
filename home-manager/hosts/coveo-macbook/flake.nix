@@ -36,6 +36,7 @@
         ../../modules/neovim.nix
         ../../modules/git.nix
         ../../modules/shell.nix
+        ../../modules/k8s.nix
         ./home.nix
         ./git.nix
       ];
