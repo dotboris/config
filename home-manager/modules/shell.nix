@@ -18,11 +18,12 @@
     pkgs.yq
 
     pkgs.jless
-    pkgs.bat
 
     # For fish.fzf plugin
     pkgs.fzf
   ];
+
+  programs.bat.enable = true;
 
   programs.eza = {
     enable = true;
