@@ -42,6 +42,7 @@
 
   # Linux specific tweaks & integrations.
   targets.genericLinux.enable = true;
+  xdg.enable = true;
   xdg.mime.enable = true;
 
   # Let Home Manager install and manage itself.
