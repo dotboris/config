@@ -1,8 +1,21 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.gh
     pkgs.tig
   ];
+
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper.enable = true;
+    settings = {
+      git_protocol = "ssh";
+      prompt = "enabled";
+      aliases = {
+        co = "pr checkout";
+        prc = "pr create -w";
+        clone = "repo clone";
+      };
+    };
+  };
 
   programs.git = {
     enable = true;
