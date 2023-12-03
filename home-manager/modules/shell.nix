@@ -24,6 +24,13 @@
     pkgs.fzf
   ];
 
+  programs.eza = {
+    enable = true;
+    enableAliases = true;
+    git = true;
+    icons = true;
+  };
+
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
