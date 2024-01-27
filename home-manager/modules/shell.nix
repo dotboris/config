@@ -61,6 +61,7 @@
       buf.disabled = true;
       package.disabled = true;
       docker_context.disabled = true;
+      rust.disabled = true;
     };
   };
 
