@@ -2,23 +2,44 @@
   "nodes": {
     "cdo": {
       "inputs": {
+        "crane": "crane",
         "flake-utils": "flake-utils",
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "rust-overlay": "rust-overlay"
+        ]
       },
       "locked": {
-        "lastModified": 1706984055,
-        "narHash": "sha256-lgIh1M94zLmKL0tXzIVP1DOk6dExReyKFbqYXsDuvEI=",
+        "lastModified": 1706985109,
+        "narHash": "sha256-B8vgiVVv0hcP0ZRMP5DosACZDfpJ3mKeMVZcUgbsXMw=",
         "owner": "dotboris",
         "repo": "cdo",
-        "rev": "7093c35af9c93f725b04ebfb12f76e0d5e8f7086",
+        "rev": "05ae1cf9b99665b0e325a43e05b5f54ca24d219b",
         "type": "github"
       },
       "original": {
         "owner": "dotboris",
         "repo": "cdo",
+        "type": "github"
+      }
+    },
+    "crane": {
+      "inputs": {
+        "nixpkgs": [
+          "cdo",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1706979728,
+        "narHash": "sha256-X4nEYqI4bpCFF/Ck1HV9RuBVVYcwIeW8MEkHw+UeoO4=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "b693ec872ea8511fc8c233022e4f0eabb43bd9be",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
         "type": "github"
       }
     },
@@ -81,32 +102,6 @@
         "cdo": "cdo",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
-      }
-    },
-    "rust-overlay": {
-      "inputs": {
-        "flake-utils": [
-          "cdo",
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "cdo",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1706634984,
-        "narHash": "sha256-xn7lGPE8gRGBe3Lt8ESoN/uUHm7IrbiV7siupwjHX1o=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "883b84c426107a8ec020e7124f263d7c35a5bb9f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "ref": "stable",
-        "repo": "rust-overlay",
-        "type": "github"
       }
     },
     "systems": {
