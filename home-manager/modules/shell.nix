@@ -2,12 +2,13 @@
 {
   pkgs,
   lib,
-  cdo,
+  system,
+  inputs,
   ...
 }: {
   home.packages = [
     # Day to day utils
-    cdo
+    inputs.cdo.packages.${system}.default
 
     pkgs.ripgrep
     pkgs.fd

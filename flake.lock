@@ -1,5 +1,50 @@
 {
   "nodes": {
+    "cdo": {
+      "inputs": {
+        "crane": "crane",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1706985403,
+        "narHash": "sha256-ZQaavdAD9Nh9hZrxP3sxCPcUZjftWbA6sSyKDsbV6mY=",
+        "owner": "dotboris",
+        "repo": "cdo",
+        "rev": "bb9ad2faa9b429efe293ded8d45a03d83e4fb196",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dotboris",
+        "repo": "cdo",
+        "type": "github"
+      }
+    },
+    "crane": {
+      "inputs": {
+        "nixpkgs": [
+          "cdo",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1706979728,
+        "narHash": "sha256-X4nEYqI4bpCFF/Ck1HV9RuBVVYcwIeW8MEkHw+UeoO4=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "b693ec872ea8511fc8c233022e4f0eabb43bd9be",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -18,13 +63,33 @@
         "type": "github"
       }
     },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1706985585,
+        "narHash": "sha256-ptshv4qXiC6V0GCfpABz88UGGPNwqs5tAxaRUKbk1Qo=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "1ca210648a6ca9b957efde5da957f3de6b1f0c45",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1706173671,
-        "narHash": "sha256-lciR7kQUK2FCAYuszyd7zyRRmTaXVeoZsCyK6QFpGdk=",
+        "lastModified": 1706925685,
+        "narHash": "sha256-hVInjWMmgH4yZgA4ZtbgJM1qEAel72SYhP5nOWX4UIM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4fddc9be4eaf195d631333908f2a454b03628ee5",
+        "rev": "79a13f1437e149dc7be2d1290c74d378dad60814",
         "type": "github"
       },
       "original": {
@@ -36,7 +101,9 @@
     },
     "root": {
       "inputs": {
+        "cdo": "cdo",
         "flake-utils": "flake-utils",
+        "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }
     },

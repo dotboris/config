@@ -2,13 +2,26 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    cdo = {
+      url = "github:dotboris/cdo";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     flake-utils,
-  }:
+    home-manager,
+    ...
+  } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {inherit system;};
     in {
@@ -20,5 +33,36 @@
           pkgs.nil
         ];
       };
-    });
+    })
+    // {
+      homeConfigurations."desktop" = let
+        system = "x86_64-linux";
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      in
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [./home-manager/hosts/desktop/home.nix];
+          extraSpecialArgs = {
+            inherit inputs system;
+          };
+        };
+
+      homeConfigurations."coveo-macbook" = let
+        system = "aarch64-darwin";
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      in
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [./home-manager/hosts/coveo-macbook/home.nix];
+          extraSpecialArgs = {
+            inherit inputs system;
+          };
+        };
+    };
 }

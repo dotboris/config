@@ -1,5 +1,24 @@
 # Config
 
+## Update
+
+```sh
+# Get latest code
+git checkout main
+git pull
+
+# Update flake
+nix flake update -L
+
+# Switch configuration
+home-manager switch -L --flake $(pwd)#{host}
+
+# Commit update
+git add .
+git commit
+git push
+```
+
 ## Setup existing host
 
 ### Home Manager
@@ -10,7 +29,7 @@
 1. Apply the home manager config
 
     ```sh
-    home-manager switch -L --flake '{...}/home-manager/hosts/{host}'
+    home-manager switch -L --flake $(pwd)#{host}
     ```
 
 ## Define new host
