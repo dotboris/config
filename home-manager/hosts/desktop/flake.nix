@@ -9,7 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    cdo.url = "github:dotboris/cdo";
+    cdo = {
+      url = "github:dotboris/cdo";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
