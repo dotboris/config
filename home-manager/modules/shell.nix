@@ -28,7 +28,6 @@
 
   programs.eza = {
     enable = true;
-    enableAliases = true;
     git = true;
     icons = false; # Seems to require nerdfonts which I don't want to require
   };
