@@ -5,12 +5,15 @@
     ../../modules/git.nix
     ../../modules/shell.nix
     ../../modules/k8s.nix
-    ./home.nix
-    ./git.nix
   ];
 
   home.username = "bbera";
   home.homeDirectory = "/Users/bbera";
+
+  local.git = {
+    userName = "Boris Bera";
+    userEmail = "bbera@coveo.com";
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
