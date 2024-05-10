@@ -14,6 +14,7 @@
     pkgs.fd
     pkgs.sd
     pkgs.ast-grep
+    pkgs.watchexec
 
     pkgs.jq
     pkgs.yq
