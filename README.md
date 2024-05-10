@@ -21,8 +21,6 @@ git push
 
 ## Setup existing host
 
-### Home Manager
-
 1. Install Nix
 1. Install Home Manager
 1. Clone this repository somewhere
@@ -30,6 +28,12 @@ git push
 
     ```sh
     home-manager switch -L --flake $(pwd)#{host}
+    ```
+
+1. Generate a GPG key
+
+    ```sh
+    gpg --gen-key
     ```
 
 ## Define new host

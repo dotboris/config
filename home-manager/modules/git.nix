@@ -31,6 +31,12 @@ in {
       };
     };
 
+    programs.gpg.enable = true;
+    services.gpg-agent = {
+      enable = true;
+      pinentryPackage = pkgs.pinentry-tty;
+    };
+
     programs.git = {
       enable = true;
       lfs.enable = true;
@@ -38,6 +44,10 @@ in {
 
       userName = cfg.userName;
       userEmail = cfg.userEmail;
+      signing = {
+        key = null; # Let GPG pick
+        signByDefault = true;
+      };
 
       extraConfig = {
         color.ui = "auto";
