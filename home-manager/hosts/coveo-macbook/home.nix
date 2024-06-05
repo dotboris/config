@@ -35,8 +35,6 @@
     pkgs.aws-vault
 
     pkgs.pre-commit
-
-    pkgs._1password-gui
   ];
 
   # Let Home Manager install and manage itself.
