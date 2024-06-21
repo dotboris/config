@@ -5,6 +5,7 @@
     ../../modules/git.nix
     ../../modules/shell.nix
     ../../modules/k8s.nix
+    ../../modules/aws.nix
   ];
 
   home.username = "bbera";
@@ -29,10 +30,6 @@
     pkgs.alejandra
 
     pkgs.terraform
-
-    pkgs.awscli2
-    pkgs.ssm-session-manager-plugin
-    pkgs.aws-vault
 
     pkgs.pre-commit
   ];
