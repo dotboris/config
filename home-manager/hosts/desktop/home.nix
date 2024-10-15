@@ -28,8 +28,6 @@
     pkgs.nixd
     pkgs.nil
     pkgs.alejandra
-
-    pkgs.webcord
   ];
 
   # Linux specific tweaks & integrations.
