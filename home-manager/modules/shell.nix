@@ -30,7 +30,7 @@
   programs.eza = {
     enable = true;
     git = true;
-    icons = false; # Seems to require nerdfonts which I don't want to require
+    icons = null; # Seems to require nerdfonts which I don't want to require
   };
 
   programs.starship = {
