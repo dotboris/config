@@ -2,12 +2,15 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     cdo = {
       url = "github:dotboris/cdo";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,6 +23,7 @@
     nixpkgs,
     flake-utils,
     home-manager,
+    nixgl,
     ...
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: let
