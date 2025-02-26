@@ -2,7 +2,7 @@
   pkgs,
   config,
   ...
-}:  {
+}: {
   home.packages = [
     pkgs.fira-code
   ];

@@ -4,8 +4,8 @@
     ../../modules/neovim.nix
     ../../modules/git.nix
     ../../modules/ghostty.nix
-    ../../modules/shell.nix
     ../../modules/k8s.nix
+    ../../modules/shell.nix
   ];
 
   home.username = "dotboris";

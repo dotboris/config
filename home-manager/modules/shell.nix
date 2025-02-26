@@ -27,10 +27,25 @@
 
   programs.bat.enable = true;
 
+  programs.btop = {
+    enable = true;
+    settings = {
+      vim_keys = true;
+      proc_tree = true;
+      proc_gradient = false;
+    };
+  };
+
   programs.eza = {
     enable = true;
     git = true;
     icons = null; # Seems to require nerdfonts which I don't want to require
+  };
+
+  services.ssh-agent.enable = true;
+  programs.ssh = {
+    enable = true;
+    addKeysToAgent = "yes";
   };
 
   programs.starship = {

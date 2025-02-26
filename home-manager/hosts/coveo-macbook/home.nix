@@ -1,11 +1,11 @@
 {pkgs, ...}: {
   imports = [
+    ../../modules/aws.nix
     ../../modules/base.nix
     ../../modules/neovim.nix
     ../../modules/git.nix
-    ../../modules/shell.nix
     ../../modules/k8s.nix
-    ../../modules/aws.nix
+    ../../modules/shell.nix
   ];
 
   home.username = "bbera";
