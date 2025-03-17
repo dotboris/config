@@ -6,7 +6,6 @@
     ../../modules/ghostty.nix
     ../../modules/k8s.nix
     ../../modules/shell.nix
-    ./automount-nextcloud.nix
   ];
 
   home.username = "dotboris";
