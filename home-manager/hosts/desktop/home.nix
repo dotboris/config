@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../modules/base.nix
+    ../../modules/browser.nix
     ../../modules/neovim.nix
     ../../modules/git.nix
     ../../modules/ghostty.nix
