@@ -35,6 +35,7 @@
         packages = [
           # language server for nix
           pkgs.nil
+          home-manager.packages.${system}.default
         ];
       };
     })

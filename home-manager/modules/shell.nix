@@ -42,7 +42,8 @@
     icons = null; # Seems to require nerdfonts which I don't want to require
   };
 
-  services.ssh-agent.enable = true;
+  # Only works on linux
+  services.ssh-agent.enable = pkgs.stdenv.isLinux;
   programs.ssh = {
     enable = true;
     addKeysToAgent = "2h";

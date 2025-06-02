@@ -3,6 +3,7 @@
     ../../modules/aws.nix
     ../../modules/base.nix
     ../../modules/neovim.nix
+    ../../modules/ghostty.nix
     ../../modules/git.nix
     ../../modules/k8s.nix
     ../../modules/shell.nix
