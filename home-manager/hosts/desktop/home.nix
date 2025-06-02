@@ -25,12 +25,6 @@
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  home.packages = [
-    pkgs.nixd
-    pkgs.nil
-    pkgs.alejandra
-  ];
-
   # Linux specific tweaks & integrations.
   targets.genericLinux.enable = true;
   xdg.enable = true;

@@ -26,15 +26,6 @@
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  home.packages = [
-    pkgs.nil
-    pkgs.alejandra
-
-    pkgs.terraform
-
-    pkgs.pre-commit
-  ];
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

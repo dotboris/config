@@ -35,6 +35,9 @@
         packages = [
           # language server for nix
           pkgs.nil
+          pkgs.alejandra
+
+          # home-manager itself
           home-manager.packages.${system}.default
         ];
       };
