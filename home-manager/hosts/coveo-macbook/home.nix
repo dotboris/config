@@ -7,6 +7,7 @@
     ../../modules/git.nix
     ../../modules/k8s.nix
     ../../modules/shell.nix
+    ../../modules/vscode
   ];
 
   home.username = "bbera";
@@ -16,6 +17,16 @@
     userName = "Boris Bera";
     userEmail = "bbera@coveo.com";
   };
+
+  local.vscode = {
+    enable = true;
+    javascript.enable = true;
+    nix.enable = true;
+    python.enable = true;
+    shell.enable = true;
+    web.enable = true;
+  };
+  programs.vscode.profiles.default.userSettings."editor.rulers" = [120];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

@@ -18,16 +18,13 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = [
-      # Needed for prettier formatting
-      pkgs.nodePackages.prettier
-    ];
-
     programs.vscode = {
       enable = true;
       package = pkgs.vscodium;
       mutableExtensionsDir = true;
       profiles.default = {
+        enableUpdateCheck = false;
+        enableExtensionUpdateCheck = false;
         extensions = let
           inherit
             (pkgs.nix-vscode-extensions)
