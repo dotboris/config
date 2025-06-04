@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ../../modules/base.nix
     ../../modules/neovim.nix
@@ -6,6 +6,7 @@
     ../../modules/ghostty.nix
     ../../modules/k8s.nix
     ../../modules/shell.nix
+    ../../modules/vscode
   ];
 
   home.username = "dotboris";
@@ -14,6 +15,15 @@
   local.git = {
     userName = "Boris Bera";
     userEmail = "beraboris@gmail.com";
+  };
+  local.vscode = {
+    enable = true;
+    javascript.enable = true;
+    nix.enable = true;
+    python.enable = true;
+    rust.enable = true;
+    shell.enable = true;
+    web.enable = true;
   };
 
   # This value determines the Home Manager release that your configuration is

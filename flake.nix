@@ -16,6 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs = {
@@ -24,10 +29,17 @@
     flake-utils,
     home-manager,
     nixgl,
+    nix-vscode-extensions,
     ...
-  } @ inputs:
+  } @ inputs: let
+    overlays = [
+      nix-vscode-extensions.overlays.default
+    ];
+  in
     flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {inherit system;};
+      pkgs = import nixpkgs {
+        inherit overlays system;
+      };
     in {
       formatter = pkgs.alejandra;
 
@@ -46,7 +58,7 @@
       homeConfigurations."desktop" = let
         system = "x86_64-linux";
         pkgs = import nixpkgs {
-          inherit system;
+          inherit overlays system;
           config.allowUnfree = true;
         };
       in
@@ -61,7 +73,7 @@
       homeConfigurations."coveo-macbook" = let
         system = "aarch64-darwin";
         pkgs = import nixpkgs {
-          inherit system;
+          inherit overlays system;
           config.allowUnfree = true;
         };
       in

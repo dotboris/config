@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ../../modules/aws.nix
     ../../modules/base.nix
