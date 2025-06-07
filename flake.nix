@@ -41,7 +41,11 @@
         inherit overlays system;
       };
     in {
-      formatter = pkgs.alejandra;
+      formatter = pkgs.writeShellApplication {
+        name = "alejandra-format-repo";
+        runtimeInputs = [pkgs.alejandra];
+        text = "alejandra .";
+      };
 
       devShells.default = pkgs.mkShell {
         packages = [
