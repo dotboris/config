@@ -18,6 +18,7 @@
   };
   local.vscode = {
     enable = true;
+    go.enable = true;
     javascript.enable = true;
     nix.enable = true;
     python.enable = true;

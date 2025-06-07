@@ -9,6 +9,7 @@
 in {
   options.local.vscode = {
     enable = mkEnableOption "vscode";
+    go.enable = mkEnableOption "go support";
     javascript.enable = mkEnableOption "javascript & typescript support";
     nix.enable = mkEnableOption "nix language support";
     python.enable = mkEnableOption "python support";
@@ -42,6 +43,9 @@ in {
             vscode-marketplace.streetsidesoftware.code-spell-checker
             vscode-marketplace.tamasfe.even-better-toml
             vscode-marketplace.vscodevim.vim
+          ]
+          ++ lib.optionals cfg.go.enable [
+            vscode-marketplace.golang.go
           ]
           ++ lib.optionals cfg.javascript.enable [
             vscode-marketplace.dbaeumer.vscode-eslint
@@ -100,6 +104,13 @@ in {
             "[json5]" = {
               "editor.defaultFormatter" = "esbenp.prettier-vscode";
             };
+          }
+          // lib.optionalAttrs cfg.go.enable {
+            "go.inlayHints.assignVariableTypes" = true;
+            "go.inlayHints.compositeLiteralFields" = true;
+            "go.inlayHints.parameterNames" = true;
+            "go.inlayHints.rangeVariableTypes" = true;
+            "go.inlayHints.compositeLiteralTypes" = false;
           }
           // lib.optionalAttrs cfg.javascript.enable {
             # Enable all the inlay hints
