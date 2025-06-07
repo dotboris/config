@@ -18,6 +18,7 @@
   };
   local.vscode = {
     enable = true;
+    github-actions.enable = true;
     go.enable = true;
     javascript.enable = true;
     nix.enable = true;

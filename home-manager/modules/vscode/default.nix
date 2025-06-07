@@ -9,6 +9,7 @@
 in {
   options.local.vscode = {
     enable = mkEnableOption "vscode";
+    github-actions.enable = mkEnableOption "github-action support";
     go.enable = mkEnableOption "go support";
     javascript.enable = mkEnableOption "javascript & typescript support";
     nix.enable = mkEnableOption "nix language support";
@@ -43,6 +44,9 @@ in {
             vscode-marketplace.streetsidesoftware.code-spell-checker
             vscode-marketplace.tamasfe.even-better-toml
             vscode-marketplace.vscodevim.vim
+          ]
+          ++ lib.optionals cfg.github-actions.enable [
+            vscode-marketplace.github.vscode-github-actions
           ]
           ++ lib.optionals cfg.go.enable [
             vscode-marketplace.golang.go
