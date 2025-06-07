@@ -38,6 +38,7 @@ in {
             vscode-marketplace.blueglassblock.better-json5
             vscode-marketplace.editorconfig.editorconfig
             vscode-marketplace.esbenp.prettier-vscode
+            vscode-marketplace.nefrob.vscode-just-syntax
             vscode-marketplace.redhat.vscode-yaml
             vscode-marketplace.sleistner.vscode-fileutils
             vscode-marketplace.stkb.rewrap
