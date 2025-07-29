@@ -37,7 +37,7 @@ in {
       # - https://github.com/nix-community/home-manager/issues/3864
       # - https://github.com/nix-community/home-manager/pull/2964
       enable = pkgs.hostPlatform.isLinux;
-      pinentryPackage = pkgs.pinentry-tty;
+      pinentry.package = pkgs.pinentry-tty;
     };
 
     programs.git = {
