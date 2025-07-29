@@ -31,6 +31,7 @@ in {
           inherit
             (pkgs.nix-vscode-extensions)
             vscode-marketplace
+            open-vsx
             ;
         in
           [
@@ -60,11 +61,11 @@ in {
             vscode-marketplace.jnoortheen.nix-ide
           ]
           ++ lib.optionals cfg.python.enable [
+            open-vsx.detachhead.basedpyright
             vscode-marketplace.charliermarsh.ruff
             vscode-marketplace.matangover.mypy
             vscode-marketplace.ms-python.black-formatter
             vscode-marketplace.ms-python.debugpy
-            vscode-marketplace.ms-python.vscode-pylance
             vscode-marketplace.ms-python.python
           ]
           ++ lib.optionals cfg.rust.enable [
@@ -143,12 +144,6 @@ in {
           }
           // lib.optionalAttrs cfg.python.enable {
             "mypy.dmypyExecutable" = "${pkgs.mypy}/bin/dmypy";
-            "python.analysis.autoImportCompletions" = true;
-            "python.analysis.inlayHints.callArgumentNames" = "partial";
-            "python.analysis.inlayHints.functionReturnTypes" = true;
-            "python.analysis.inlayHints.pytestParameters" = true;
-            "python.analysis.inlayHints.variableTypes" = true;
-            "python.analysis.languageServerMode" = "full";
             "[python]" = {
               "editor.tabSize" = 4;
               "editor.defaultFormatter" = "charliermarsh.ruff";
