@@ -11,6 +11,7 @@ in {
     enable = mkEnableOption "vscode";
     github-actions.enable = mkEnableOption "github-action support";
     go.enable = mkEnableOption "go support";
+    iac.enable = mkEnableOption "IaC tools support";
     javascript.enable = mkEnableOption "javascript & typescript support";
     nix.enable = mkEnableOption "nix language support";
     python.enable = mkEnableOption "python support";
@@ -52,6 +53,10 @@ in {
           ]
           ++ lib.optionals cfg.go.enable [
             vscode-marketplace.golang.go
+          ]
+          ++ lib.optionals cfg.iac.enable [
+            vscode-marketplace.hashicorp.hcl
+            vscode-marketplace.hashicorp.terraform
           ]
           ++ lib.optionals cfg.javascript.enable [
             vscode-marketplace.dbaeumer.vscode-eslint
@@ -103,6 +108,14 @@ in {
             # Disable bad features
             "redhat.telemetry.enabled" = false;
             "chat.commandCenter.enabled" = false;
+            "telemetry.enableTelemetry" = false;
+            "telemetry.enableCrashReporter" = false;
+            "telemetry.feedback.enabled" = false;
+            "telemetry.telemetryLevel" = "off";
+            "update.enableWindowsBackgroundUpdates" = false;
+            "update.mode" = "manual";
+            "workbench.enableExperiments" = false;
+            "workbench.settings.enableNaturalLanguageSearch" = false;
 
             # We have to set this because the default is wrong
             "prettier.prettierPath" = "${pkgs.nodePackages.prettier}";

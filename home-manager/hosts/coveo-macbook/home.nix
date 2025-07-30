@@ -20,6 +20,7 @@
 
   local.vscode = {
     enable = true;
+    iac.enable = true;
     github-actions.enable = true;
     go.enable = false;
     javascript.enable = true;
