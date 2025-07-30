@@ -57,6 +57,7 @@ in {
           ++ lib.optionals cfg.iac.enable [
             vscode-marketplace.hashicorp.hcl
             vscode-marketplace.hashicorp.terraform
+            vscode-marketplace.ms-kubernetes-tools.vscode-kubernetes-tools
           ]
           ++ lib.optionals cfg.javascript.enable [
             vscode-marketplace.dbaeumer.vscode-eslint
