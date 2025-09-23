@@ -114,7 +114,9 @@ in {
             "telemetry.feedback.enabled" = false;
             "telemetry.telemetryLevel" = "off";
             "update.enableWindowsBackgroundUpdates" = false;
-            "update.mode" = "manual";
+            "update.mode" = "none";
+            "extensions.autoCheckUpdates" = false;
+            "extensions.autoUpdate" = false;
             "workbench.enableExperiments" = false;
             "workbench.settings.enableNaturalLanguageSearch" = false;
 
