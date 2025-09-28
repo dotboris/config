@@ -46,7 +46,14 @@
   services.ssh-agent.enable = pkgs.stdenv.isLinux;
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "2h";
+    enableDefaultConfig = false;
+    matchBlocks."*" = {
+      addKeysToAgent = "2h";
+      setEnv = {
+        # Most servers don't have `xterm-ghostty` termcap
+        TERM = "xterm-256color";
+      };
+    };
   };
 
   programs.starship = {
