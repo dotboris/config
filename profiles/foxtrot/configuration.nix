@@ -37,7 +37,6 @@
     shell = pkgs.fish;
   };
   programs.fish.enable = true;
-  programs.firefox.enable = true;
   environment.systemPackages = [
     pkgs.neovim
     pkgs.btop
