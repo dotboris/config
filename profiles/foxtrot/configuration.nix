@@ -37,12 +37,14 @@
     shell = pkgs.fish;
   };
   programs.fish.enable = true;
+  programs.steam.enable = true;
   environment.systemPackages = [
     pkgs.neovim
     pkgs.btop
     pkgs.htop
     pkgs.busybox
     pkgs.dig
+    pkgs.lutris
   ];
 
   services.fwupd.enable = true;
