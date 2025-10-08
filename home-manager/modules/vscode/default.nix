@@ -102,6 +102,8 @@ in {
             "vim.useSystemClipboard" = true;
             "vim.handleKeys" = {
               "<C-p>" = false;
+              "<C-j>" = false;
+              "<C-b>" = false;
             };
             "files.insertFinalNewline" = true;
             "files.trimTrailingWhitespace" = true;

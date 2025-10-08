@@ -7,6 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,6 +31,7 @@
     home-manager,
     nixgl,
     nix-vscode-extensions,
+    nixos-hardware,
     ...
   } @ inputs: let
     overlays = [
@@ -85,6 +87,39 @@
           inherit pkgs;
           modules = [./home-manager/hosts/coveo-macbook/home.nix];
           extraSpecialArgs = {
+            inherit inputs system;
+          };
+        };
+
+      homeConfigurations."foxtrot" = let
+        system = "x86_64-linux";
+        pkgs = import nixpkgs {
+          inherit overlays system;
+          config.allowUnfree = true;
+        };
+      in
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [./profiles/foxtrot/home.nix];
+          extraSpecialArgs = {
+            inherit inputs system;
+          };
+        };
+      nixosConfigurations.foxtrot = let
+        system = "x86_64-linux";
+        pkgs = import nixpkgs {
+          inherit overlays system;
+          config.allowUnfree = true;
+        };
+      in
+        nixpkgs.lib.nixosSystem {
+          inherit pkgs;
+          system = "x86_64-linux";
+          modules = [
+            nixos-hardware.nixosModules.framework-amd-ai-300-series
+            ./profiles/foxtrot/configuration.nix
+          ];
+          specialArgs = {
             inherit inputs system;
           };
         };
