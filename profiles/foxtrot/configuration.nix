@@ -8,7 +8,7 @@
     ./hardware-configuration.nix
   ];
 
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.05";
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -18,7 +18,6 @@
   networking.hostName = "foxtrot";
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/Toronto";
 
   services.desktopManager.plasma6.enable = true;
@@ -30,10 +29,8 @@
     enable = true;
     pulse.enable = true;
   };
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
+  services.libinput.enable = true; # touchpad support
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dotboris = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager"];
