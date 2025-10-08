@@ -35,11 +35,6 @@
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager"];
     shell = pkgs.fish;
-    packages = [
-      pkgs.neovim
-      pkgs.nextcloud-client
-      pkgs.keepassxc
-    ];
   };
   programs.fish.enable = true;
   programs.firefox.enable = true;
