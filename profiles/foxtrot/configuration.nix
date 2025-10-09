@@ -60,6 +60,6 @@
       max-jobs = "auto";
     };
     gc.automatic = true;
-    optimize.automatic = true;
+    optimise.automatic = true;
   };
 }
