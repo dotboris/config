@@ -53,9 +53,13 @@
     disableTaildrop = true;
   };
 
-  nix.settings = {
-    experimental-features = ["nix-command" "flakes"];
-    cores = 0;
-    max-jobs = "auto";
+  nix = {
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      cores = 0;
+      max-jobs = "auto";
+    };
+    gc.automatic = true;
+    optimize.automatic = true;
   };
 }
