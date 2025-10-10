@@ -1,12 +1,12 @@
 {...}: {
   imports = [
-    ../../modules/base.nix
-    ../../modules/neovim.nix
-    ../../modules/git.nix
-    ../../modules/ghostty.nix
-    ../../modules/k8s.nix
-    ../../modules/shell.nix
-    ../../modules/vscode
+    ../../home-manager/modules/base.nix
+    ../../home-manager/modules/neovim.nix
+    ../../home-manager/modules/git.nix
+    ../../home-manager/modules/ghostty.nix
+    ../../home-manager/modules/k8s.nix
+    ../../home-manager/modules/shell.nix
+    ../../home-manager/modules/vscode
   ];
 
   home.username = "dotboris";

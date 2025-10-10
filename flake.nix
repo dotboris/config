@@ -61,7 +61,7 @@
       };
     })
     // {
-      homeConfigurations."desktop" = let
+      homeConfigurations.desktop = let
         system = "x86_64-linux";
         pkgs = import nixpkgs {
           inherit overlays system;
@@ -70,7 +70,7 @@
       in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [./home-manager/hosts/desktop/home.nix];
+          modules = [./profiles/desktop/home.nix];
           extraSpecialArgs = {
             inherit inputs system;
           };
@@ -91,7 +91,7 @@
           };
         };
 
-      homeConfigurations."foxtrot" = let
+      homeConfigurations.foxtrot = let
         system = "x86_64-linux";
         pkgs = import nixpkgs {
           inherit overlays system;
