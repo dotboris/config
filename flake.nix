@@ -41,6 +41,7 @@
         ./modules/home/k8s.nix
         ./modules/home/neovim.nix
         ./modules/home/shell.nix
+        ./modules/nixos/vms.nix
         ./profiles/coveo-macbook
         ./profiles/desktop
         ./profiles/foxtrot
