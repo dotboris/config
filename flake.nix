@@ -85,7 +85,7 @@
       in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [./home-manager/hosts/coveo-macbook/home.nix];
+          modules = [./profiles/coveo-macbook/home.nix];
           extraSpecialArgs = {
             inherit inputs system;
           };
