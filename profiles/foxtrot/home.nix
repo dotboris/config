@@ -1,13 +1,13 @@
 {...}: {
   imports = [
-    ../../home-manager/modules/base.nix
-    ../../home-manager/modules/desktop.nix
-    ../../home-manager/modules/neovim.nix
-    ../../home-manager/modules/git.nix
-    ../../home-manager/modules/ghostty.nix
-    ../../home-manager/modules/k8s.nix
-    ../../home-manager/modules/shell.nix
-    ../../home-manager/modules/vscode
+    ../../modules/home/base.nix
+    ../../modules/home/desktop.nix
+    ../../modules/home/neovim.nix
+    ../../modules/home/git.nix
+    ../../modules/home/ghostty.nix
+    ../../modules/home/k8s.nix
+    ../../modules/home/shell.nix
+    ../../modules/home/vscode
   ];
 
   home.username = "dotboris";

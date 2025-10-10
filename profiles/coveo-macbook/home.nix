@@ -1,13 +1,13 @@
 {...}: {
   imports = [
-    ../../modules/aws.nix
-    ../../modules/base.nix
-    ../../modules/neovim.nix
-    ../../modules/ghostty.nix
-    ../../modules/git.nix
-    ../../modules/k8s.nix
-    ../../modules/shell.nix
-    ../../modules/vscode
+    ../../modules/home/aws.nix
+    ../../modules/home/base.nix
+    ../../modules/home/neovim.nix
+    ../../modules/home/ghostty.nix
+    ../../modules/home/git.nix
+    ../../modules/home/k8s.nix
+    ../../modules/home/shell.nix
+    ../../modules/home/vscode
   ];
 
   home.username = "bbera";
