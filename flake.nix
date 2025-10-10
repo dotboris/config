@@ -1,11 +1,10 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-parts.url = "github:hercules-ci/flake-parts";
     nixgl = {
       url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
@@ -15,113 +14,68 @@
     cdo = {
       url = "github:dotboris/cdo";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
   };
-
-  outputs = {
+  outputs = inputs @ {
     self,
     nixpkgs,
-    flake-utils,
+    flake-parts,
     home-manager,
-    nixgl,
     nix-vscode-extensions,
-    nixos-hardware,
     ...
-  } @ inputs: let
-    overlays = [
-      nix-vscode-extensions.overlays.default
-    ];
-  in
-    flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {
-        inherit overlays system;
-      };
-    in {
-      formatter = pkgs.writeShellApplication {
-        name = "alejandra-format-repo";
-        runtimeInputs = [pkgs.alejandra];
-        text = "alejandra .";
-      };
-
-      devShells.default = pkgs.mkShell {
-        packages = [
-          # language server for nix
-          pkgs.nil
-          pkgs.alejandra
-
-          # home-manager itself
-          home-manager.packages.${system}.default
-        ];
-      };
-    })
-    // {
-      homeConfigurations.desktop = let
-        system = "x86_64-linux";
-        pkgs = import nixpkgs {
-          inherit overlays system;
-          config.allowUnfree = true;
-        };
-      in
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [./profiles/desktop/home.nix];
-          extraSpecialArgs = {
-            inherit inputs system;
-          };
-        };
-
-      homeConfigurations."coveo-macbook" = let
-        system = "aarch64-darwin";
-        pkgs = import nixpkgs {
-          inherit overlays system;
-          config.allowUnfree = true;
-        };
-      in
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [./profiles/coveo-macbook/home.nix];
-          extraSpecialArgs = {
-            inherit inputs system;
-          };
-        };
-
-      homeConfigurations.foxtrot = let
-        system = "x86_64-linux";
-        pkgs = import nixpkgs {
-          inherit overlays system;
-          config.allowUnfree = true;
-        };
-      in
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [./profiles/foxtrot/home.nix];
-          extraSpecialArgs = {
-            inherit inputs system;
-          };
-        };
-      nixosConfigurations.foxtrot = let
-        system = "x86_64-linux";
-        pkgs = import nixpkgs {
-          inherit overlays system;
-          config.allowUnfree = true;
-        };
-      in
-        nixpkgs.lib.nixosSystem {
-          inherit pkgs;
-          system = "x86_64-linux";
-          modules = [
-            nixos-hardware.nixosModules.framework-amd-ai-300-series
-            ./profiles/foxtrot/configuration.nix
+  }:
+    flake-parts.lib.mkFlake {inherit inputs;} ({...}: {
+      debug = false;
+      imports = [
+        home-manager.flakeModules.home-manager
+        ./modules/home/vscode
+        ./modules/home/aws.nix
+        ./modules/home/base.nix
+        ./modules/home/desktop.nix
+        ./modules/home/ghostty.nix
+        ./modules/home/git.nix
+        ./modules/home/k8s.nix
+        ./modules/home/neovim.nix
+        ./modules/home/shell.nix
+        ./profiles/coveo-macbook
+        ./profiles/desktop
+        ./profiles/foxtrot
+      ];
+      systems = [
+        "aarch64-darwin"
+        "x86_64-linux"
+      ];
+      perSystem = {
+        pkgs,
+        system,
+        ...
+      }: {
+        _module.args.pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            nix-vscode-extensions.overlays.default
           ];
-          specialArgs = {
-            inherit inputs system;
-          };
+          config.allowUnfree = true;
         };
-    };
+        formatter = pkgs.writeShellApplication {
+          name = "alejandra-format-repo";
+          runtimeInputs = [pkgs.alejandra];
+          text = "alejandra .";
+        };
+        devShells.default = pkgs.mkShell {
+          packages = [
+            # language server for nix
+            pkgs.nil
+            pkgs.alejandra
+
+            # home-manager itself
+            home-manager.packages.${system}.default
+          ];
+        };
+      };
+    });
 }
