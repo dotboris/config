@@ -41,6 +41,8 @@
         ./modules/home/k8s.nix
         ./modules/home/neovim.nix
         ./modules/home/shell.nix
+        ./modules/nixos/gaming.nix
+        ./modules/nixos/users.nix
         ./modules/nixos/vms.nix
         ./profiles/coveo-macbook
         ./profiles/desktop

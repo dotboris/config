@@ -9,6 +9,8 @@
     imports = [
       inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
       ./hardware-configuration.nix
+      self.nixosModules.gaming
+      self.nixosModules.users
       self.nixosModules.vms
     ];
 
@@ -35,20 +37,12 @@
     };
     services.libinput.enable = true; # touchpad support
 
-    users.users.dotboris = {
-      isNormalUser = true;
-      extraGroups = ["wheel" "networkmanager"];
-      shell = pkgs.fish;
-    };
-    programs.fish.enable = true;
-    programs.steam.enable = true;
     environment.systemPackages = [
       pkgs.neovim
       pkgs.btop
       pkgs.htop
       pkgs.busybox
       pkgs.dig
-      pkgs.lutris
     ];
 
     services.fwupd.enable = true;
