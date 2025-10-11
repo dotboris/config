@@ -23,6 +23,18 @@
 
     networking.hostName = "foxtrot";
     networking.networkmanager.enable = true;
+    networking.hosts = {
+      "192.168.122.3" = [
+        "homelab-test-foxtrot.lan"
+        "home-test-foxtrot.dotboris.io"
+        "archive-test-foxtrot.dotboris.io"
+        "cloud-test-foxtrot.dotboris.io"
+        "feeds-test-foxtrot.dotboris.io"
+        "netdata-test-foxtrot.dotboris.io"
+        "ntfy-test-foxtrot.dotboris.io"
+        "traefik-test-foxtrot.dotboris.io"
+      ];
+    };
 
     time.timeZone = "America/Toronto";
 
