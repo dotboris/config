@@ -15,6 +15,9 @@
         name = "Breeze";
         package = pkgs.kdePackages.breeze-gtk;
       };
+      # Keeps getting replaced and giving me a warning every time I switch to a
+      # new home-manager revision.
+      gtk2.force = true;
     };
     qt = {
       enable = true;
