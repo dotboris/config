@@ -10,6 +10,7 @@
       inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
       ./hardware-configuration.nix
       self.nixosModules.gaming
+      self.nixosModules.playwright
       self.nixosModules.users
       self.nixosModules.vms
     ];

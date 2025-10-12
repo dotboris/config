@@ -42,6 +42,7 @@
         ./modules/home/neovim.nix
         ./modules/home/shell.nix
         ./modules/nixos/gaming.nix
+        ./modules/nixos/playwright.nix
         ./modules/nixos/users.nix
         ./modules/nixos/vms.nix
         ./profiles/coveo-macbook
