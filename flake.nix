@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
     nixgl = {
       url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +25,7 @@
     self,
     nixpkgs,
     flake-parts,
+    import-tree,
     home-manager,
     nix-vscode-extensions,
     ...
@@ -32,22 +34,10 @@
       debug = false;
       imports = [
         home-manager.flakeModules.home-manager
-        ./modules/home/vscode
-        ./modules/home/aws.nix
-        ./modules/home/base.nix
-        ./modules/home/desktop.nix
-        ./modules/home/ghostty.nix
-        ./modules/home/git.nix
-        ./modules/home/k8s.nix
-        ./modules/home/neovim.nix
-        ./modules/home/shell.nix
-        ./modules/nixos/gaming.nix
-        ./modules/nixos/playwright.nix
-        ./modules/nixos/users.nix
-        ./modules/nixos/vms.nix
-        ./profiles/coveo-macbook
-        ./profiles/desktop
-        ./profiles/foxtrot
+        (import-tree [
+          ./modules
+          ./profiles
+        ])
       ];
       systems = [
         "aarch64-darwin"

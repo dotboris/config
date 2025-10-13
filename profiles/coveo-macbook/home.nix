@@ -1,11 +1,5 @@
-{
-  self,
-  withSystem,
-  inputs,
-  ...
-}: let
-  inherit (inputs.home-manager.lib) homeManagerConfiguration;
-  module = {...}: {
+{self, ...}: {
+  flake.profiles.coveo-macbook.home = {...}: {
     imports = [
       self.homeModules.aws
       self.homeModules.base
@@ -43,9 +37,4 @@
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
   };
-in {
-  flake.homeConfigurations.coveo-macbook = withSystem "aarch64-darwin" ({pkgs, ...}: (homeManagerConfiguration {
-    inherit pkgs;
-    modules = [module];
-  }));
 }

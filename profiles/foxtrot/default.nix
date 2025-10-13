@@ -1,6 +1,3 @@
 {...}: {
-  imports = [
-    ./configuration.nix
-    ./home.nix
-  ];
+  flake.profiles.foxtrot.system = "x86_64-linux";
 }

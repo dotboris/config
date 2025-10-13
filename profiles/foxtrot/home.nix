@@ -1,11 +1,5 @@
-{
-  self,
-  withSystem,
-  inputs,
-  ...
-}: let
-  inherit (inputs.home-manager.lib) homeManagerConfiguration;
-  module = {...}: {
+{self, ...}: {
+  flake.profiles.foxtrot.home = {...}: {
     imports = [
       self.homeModules.base
       self.homeModules.desktop
@@ -47,9 +41,4 @@
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
   };
-in {
-  flake.homeConfigurations.foxtrot = withSystem "x86_64-linux" ({pkgs, ...}: (homeManagerConfiguration {
-    inherit pkgs;
-    modules = [module];
-  }));
 }

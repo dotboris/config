@@ -1,14 +1,11 @@
 {
   self,
   inputs,
-  withSystem,
   ...
-}: let
-  inherit (inputs.nixpkgs.lib) nixosSystem;
-  module = {pkgs, ...}: {
+}: {
+  flake.profiles.foxtrot.nixos = {pkgs, ...}: {
     imports = [
       inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
-      ./hardware-configuration.nix
       self.nixosModules.gaming
       self.nixosModules.playwright
       self.nixosModules.users
@@ -74,14 +71,4 @@
       optimise.automatic = true;
     };
   };
-in {
-  flake.nixosConfigurations.foxtrot = withSystem "x86_64-linux" ({
-    pkgs,
-    system,
-    ...
-  }:
-    nixosSystem {
-      inherit pkgs system;
-      modules = [module];
-    });
 }
