@@ -9,6 +9,7 @@
       self.nixosModules.gaming
       self.nixosModules.playwright
       self.nixosModules.users
+      self.nixosModules.tailscale
       self.nixosModules.vms
     ];
 
@@ -33,6 +34,7 @@
         "traefik-test-foxtrot.dotboris.io"
       ];
     };
+    services.resolved.enable = true;
 
     time.timeZone = "America/Toronto";
 
@@ -56,10 +58,6 @@
     ];
 
     services.fwupd.enable = true;
-    services.tailscale = {
-      enable = true;
-      disableTaildrop = true;
-    };
 
     nix = {
       settings = {
