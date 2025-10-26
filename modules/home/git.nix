@@ -41,28 +41,32 @@
         pinentry.package = pkgs.pinentry-tty;
       };
 
+      # Fancy git diffs
+      programs.delta = {
+        enable = true;
+        enableGitIntegration = true;
+      };
+
       programs.git = {
         enable = true;
         lfs.enable = true;
-        delta.enable = true;
 
-        userName = cfg.userName;
-        userEmail = cfg.userEmail;
         signing = {
           key = null; # Let GPG pick
           signByDefault = true;
         };
 
-        extraConfig = {
+        settings = {
+          user.name = cfg.userName;
+          user.email = cfg.userEmail;
+          alias = {
+            poil = "pull";
+            poule = "pull";
+          };
           color.ui = "auto";
           push.default = "upstream";
           pull.rebase = false;
           init.defaultBranch = "main";
-        };
-
-        aliases = {
-          poil = "pull";
-          poule = "pull";
         };
 
         ignores = [
