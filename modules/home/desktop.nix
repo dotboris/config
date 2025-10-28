@@ -1,5 +1,5 @@
-{...}: {
-  flake.homeModules.desktop = {pkgs, ...}: {
+{moduleWithSystem, ...}: {
+  flake.homeModules.desktop = moduleWithSystem ({inputs', ...}: {pkgs, ...}: {
     home.packages = [
       pkgs.chromium
       pkgs.firefox
@@ -7,6 +7,7 @@
       pkgs.libreoffice-qt-fresh
       pkgs.nextcloud-client
       pkgs.thunderbird
+      inputs'.zen-browser.packages.default
     ];
 
     gtk = {
@@ -26,5 +27,5 @@
         package = pkgs.kdePackages.breeze;
       };
     };
-  };
+  });
 }
