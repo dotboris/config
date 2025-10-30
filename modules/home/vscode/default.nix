@@ -35,6 +35,7 @@
             exts = (pkgs.nix-vscode-extensions.forVSCodeVersion package.version).usingFixesFrom pkgs;
           in
             [
+              exts.vscode-marketplace.ast-grep.ast-grep-vscode
               exts.vscode-marketplace.bierner.emojisense
               exts.vscode-marketplace.blueglassblock.better-json5
               exts.vscode-marketplace.editorconfig.editorconfig
