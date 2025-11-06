@@ -11,6 +11,7 @@
       self.nixosModules.users
       self.nixosModules.tailscale
       self.nixosModules.vms
+      self.nixosModules.llms
     ];
 
     system.stateVersion = "25.05";
@@ -48,6 +49,11 @@
       pulse.enable = true;
     };
     services.libinput.enable = true; # touchpad support
+
+    services.ollama = {
+      acceleration = "rocm";
+      rocmOverrideGfx = "11.0.2";
+    };
 
     environment.systemPackages = [
       pkgs.neovim
