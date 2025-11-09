@@ -124,7 +124,7 @@
               "workbench.settings.enableNaturalLanguageSearch" = false;
 
               # We have to set this because the default is wrong
-              "prettier.prettierPath" = "${pkgs.nodePackages.prettier}";
+              "prettier.prettierPath" = "${pkgs.nodePackages.prettier}/lib/node_modules/prettier";
 
               # Language specific
               "[jsonc]" = {
