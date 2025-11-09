@@ -37,7 +37,7 @@
         # The `services.gpg-agent` doesn't support MacOS as of writing this. See:
         # - https://github.com/nix-community/home-manager/issues/3864
         # - https://github.com/nix-community/home-manager/pull/2964
-        enable = pkgs.hostPlatform.isLinux;
+        enable = pkgs.stdenv.hostPlatform.isLinux;
         pinentry.package = pkgs.pinentry-tty;
       };
 
