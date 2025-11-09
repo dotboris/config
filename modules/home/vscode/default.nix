@@ -117,6 +117,7 @@
               "telemetry.telemetryLevel" = "off";
               "update.enableWindowsBackgroundUpdates" = false;
               "update.mode" = "none";
+              "update.showReleaseNotes" = false;
               "extensions.autoCheckUpdates" = false;
               "extensions.autoUpdate" = false;
               "workbench.enableExperiments" = false;
