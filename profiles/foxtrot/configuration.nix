@@ -37,6 +37,8 @@
     };
     services.resolved.enable = true;
 
+    hardware.bluetooth.enable = true;
+
     time.timeZone = "America/Toronto";
 
     services.desktopManager.plasma6.enable = true;
