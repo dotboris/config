@@ -4,6 +4,6 @@
     programs.man.enable = true;
     news.display = "silent";
     fonts.fontconfig.enable = true;
-    nixGL.packages = inputs.nixgl.packages;
+    targets.genericLinux.nixGL.packages = inputs.nixgl.packages;
   };
 }
