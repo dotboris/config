@@ -8,6 +8,12 @@
       pkgs.nextcloud-client
       pkgs.thunderbird
       inputs'.zen-browser.packages.default
+
+      # Spell Checking
+      pkgs.hunspell
+      pkgs.hunspellDicts.en-us-large
+      pkgs.hunspellDicts.en-ca-large
+      pkgs.hunspellDicts.fr-moderne
     ];
 
     gtk = {
