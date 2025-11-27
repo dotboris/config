@@ -94,6 +94,7 @@
 
     programs.fish = {
       enable = true;
+      generateCompletions = false;
 
       # PATH entries are added directly to the PATH var and to fish_user_paths to
       # ensure that nix shells can prepend stuff to the path correctly.
