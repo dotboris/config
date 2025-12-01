@@ -33,6 +33,7 @@
         "netdata-test-foxtrot.dotboris.io"
         "ntfy-test-foxtrot.dotboris.io"
         "traefik-test-foxtrot.dotboris.io"
+        "search-test-foxtrot.dotboris.io"
       ];
     };
     services.resolved.enable = true;
