@@ -5,9 +5,6 @@
       extraGroups = ["wheel" "networkmanager"];
       shell = pkgs.fish;
     };
-    programs.fish = {
-      enable = true;
-      generateCompletions = false;
-    };
+    programs.fish.enable = true;
   };
 }
