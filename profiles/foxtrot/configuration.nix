@@ -54,7 +54,7 @@
     services.libinput.enable = true; # touchpad support
 
     services.ollama = {
-      acceleration = "rocm";
+      package = pkgs.ollama-rocm;
       rocmOverrideGfx = "11.0.2";
     };
 
