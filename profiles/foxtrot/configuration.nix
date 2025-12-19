@@ -12,6 +12,7 @@
       self.nixosModules.tailscale
       self.nixosModules.vms
       self.nixosModules.llms
+      self.nixosModules.podman
     ];
 
     system.stateVersion = "25.05";
