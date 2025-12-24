@@ -34,7 +34,6 @@
     home.stateVersion = "25.05"; # Please read the comment before changing.
 
     # Linux specific tweaks & integrations.
-    targets.genericLinux.enable = true;
     xdg.enable = true;
     xdg.mime.enable = true;
 

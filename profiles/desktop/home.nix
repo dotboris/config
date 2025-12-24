@@ -1,4 +1,4 @@
-{self, ...}: {
+{self, inputs, ...}: {
   flake.profiles.desktop.home = {...}: {
     imports = [
       self.homeModules.base
@@ -34,8 +34,12 @@
 
     # Linux specific tweaks & integrations.
     targets.genericLinux = {
+      # makes it work better on non-nixos hosts
       enable = true;
-      nixGL.installScripts = ["mesa"];
+      nixGL = {
+        packages = inputs.nixgl.packages;
+        installScripts = ["mesa"];
+      };
     };
     xdg.enable = true;
     xdg.mime.enable = true;
