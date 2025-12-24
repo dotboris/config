@@ -8,7 +8,7 @@
     ghostty =
       if pkgs.stdenv.isLinux
       then (config.lib.nixGL.wrap pkgs.ghostty)
-      else null;
+      else pkgs.ghostty-bin;
   in {
     home.packages = [
       pkgs.fira-code

@@ -30,10 +30,13 @@
       web.enable = true;
     };
 
-    home.stateVersion = "25.05"; # Please read the comment before changing.
+    home.stateVersion = "25.05";
 
     # Linux specific tweaks & integrations.
-    targets.genericLinux.enable = true;
+    targets.genericLinux = {
+      enable = true;
+      nixGL.installScripts = ["mesa"];
+    };
     xdg.enable = true;
     xdg.mime.enable = true;
 
