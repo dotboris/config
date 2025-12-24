@@ -131,6 +131,11 @@
 
     programs.tmux = {
       enable = true;
+      clock24 = true;
+      historyLimit = 10000;
+      keyMode = "vi";
+      mouse = true;
+      newSession = true;
       shell = "${pkgs.fish}/bin/fish";
     };
   });
