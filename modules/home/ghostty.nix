@@ -4,7 +4,6 @@
     config,
     ...
   }: let
-    # Package only works on linux. We only manage the config otherwise
     ghostty =
       if pkgs.stdenv.isLinux
       then (config.lib.nixGL.wrap pkgs.ghostty)
