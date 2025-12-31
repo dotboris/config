@@ -75,7 +75,10 @@
         cores = 0;
         max-jobs = "auto";
       };
-      gc.automatic = true;
+      gc = {
+        automatic = true;
+        dates = "weekly";
+      };
       optimise.automatic = true;
     };
   };
