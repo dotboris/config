@@ -1,4 +1,8 @@
-{self, inputs, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.profiles.desktop.home = {...}: {
     imports = [
       self.homeModules.base

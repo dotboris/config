@@ -7,7 +7,11 @@
     ghostty =
       if pkgs.stdenv.isLinux
       then (config.lib.nixGL.wrap pkgs.ghostty)
-      else pkgs.ghostty-bin;
+      else
+        # `pkgs.ghostty-bin` works on mac but home-manager installs apps
+        # incorrectly and Spotlight (cmd + space) can't find the installed app.
+        # There's no easy fix for this so I'm just going to use brew for this.
+        null;
   in {
     home.packages = [
       pkgs.fira-code
