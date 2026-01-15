@@ -61,6 +61,7 @@
             ]
             ++ lib.optionals cfg.javascript.enable [
               exts.vscode-marketplace.dbaeumer.vscode-eslint
+              exts.vscode-marketplace.orta.vscode-jest
               exts.vscode-marketplace.yoavbls.pretty-ts-errors
             ]
             ++ lib.optionals cfg.nix.enable [
@@ -127,6 +128,9 @@
               "prettier.prettierPath" = "${pkgs.nodePackages.prettier}/lib/node_modules/prettier";
 
               # Language specific
+              "[json]" = {
+                "editor.defaultFormatter" = "esbenp.prettier-vscode";
+              };
               "[jsonc]" = {
                 "editor.defaultFormatter" = "esbenp.prettier-vscode";
               };
@@ -154,6 +158,9 @@
               "typescript.inlayHints.parameterTypes.enabled" = true;
               "typescript.inlayHints.propertyDeclarationTypes.enabled" = true;
               "typescript.inlayHints.variableTypes.enabled" = true;
+              "[javascript]" = {
+                "editor.defaultFormatter" = "esbenp.prettier-vscode";
+              };
               "[typescript]" = {
                 "editor.defaultFormatter" = "esbenp.prettier-vscode";
               };
