@@ -6,6 +6,7 @@
       pkgs.keepassxc
       pkgs.libreoffice-qt-fresh
       pkgs.nextcloud-client
+      pkgs.telegram-desktop
       pkgs.thunderbird
       inputs'.zen-browser.packages.default
 
