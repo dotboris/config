@@ -6,6 +6,7 @@
   flake.profiles.desktop.home = {...}: {
     imports = [
       self.homeModules.base
+      self.homeModules.desktop
       self.homeModules.neovim
       self.homeModules.git
       self.homeModules.ghostty
