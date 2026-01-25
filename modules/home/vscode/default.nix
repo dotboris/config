@@ -87,6 +87,7 @@
             ++ lib.optionals cfg.web.enable [
               exts.vscode-marketplace.astro-build.astro-vscode
               exts.vscode-marketplace.bradlc.vscode-tailwindcss
+              exts.vscode-marketplace.unifiedjs.vscode-mdx
             ];
           userSettings =
             {
@@ -180,6 +181,9 @@
                 "editor.defaultFormatter" = "esbenp.prettier-vscode";
               };
               "[css]" = {
+                "editor.defaultFormatter" = "esbenp.prettier-vscode";
+              };
+              "[mdx]" = {
                 "editor.defaultFormatter" = "esbenp.prettier-vscode";
               };
               "tailwindCSS.includeLanguages" = {
