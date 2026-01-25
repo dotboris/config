@@ -1,5 +1,9 @@
 {moduleWithSystem, ...}: {
-  flake.homeModules.desktop = moduleWithSystem ({inputs', ...}: {pkgs, ...}: {
+  flake.homeModules.desktop = moduleWithSystem ({inputs', ...}: {
+    config,
+    pkgs,
+    ...
+  }: {
     home.packages = [
       pkgs.chromium
       pkgs.firefox
@@ -8,7 +12,7 @@
       pkgs.nextcloud-client
       pkgs.telegram-desktop
       pkgs.thunderbird
-      inputs'.zen-browser.packages.default
+      (config.lib.nixGL.wrap inputs'.zen-browser.packages.default)
 
       # Spell Checking
       pkgs.hunspell
