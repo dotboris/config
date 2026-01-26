@@ -23,7 +23,7 @@
       enable = true;
       iac.enable = true;
       github-actions.enable = true;
-      go.enable = false;
+      go.enable = true;
       javascript.enable = true;
       nix.enable = true;
       python.enable = true;
