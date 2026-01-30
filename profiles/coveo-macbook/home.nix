@@ -30,7 +30,10 @@
       shell.enable = true;
       web.enable = true;
     };
-    programs.vscode.profiles.default.userSettings."editor.rulers" = [120];
+
+    # There's an automation that keeps editing / replacing this file.
+    # It all ends up working out so it's probably fine.
+    home.file.".ssh/config".force = true;
 
     home.stateVersion = "25.05"; # Please read the comment before changing.
 
