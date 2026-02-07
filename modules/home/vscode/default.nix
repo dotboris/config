@@ -106,6 +106,7 @@
                 "<C-p>" = false;
                 "<C-j>" = false;
                 "<C-b>" = false;
+                "<C-d>" = false;
               };
               "files.insertFinalNewline" = true;
               "files.trimTrailingWhitespace" = true;
