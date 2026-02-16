@@ -9,7 +9,7 @@
       pkgs.firefox
       pkgs.keepassxc
       pkgs.libreoffice-qt-fresh
-      pkgs.nextcloud-client
+      (config.lib.nixGL.wrap pkgs.nextcloud-client)
       pkgs.telegram-desktop
       pkgs.thunderbird
       (config.lib.nixGL.wrap inputs'.zen-browser.packages.default)
