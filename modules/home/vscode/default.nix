@@ -35,59 +35,59 @@
             exts = (pkgs.nix-vscode-extensions.forVSCodeVersion package.version).usingFixesFrom pkgs;
           in
             [
-              exts.vscode-marketplace.ast-grep.ast-grep-vscode
-              exts.vscode-marketplace.bierner.emojisense
-              exts.vscode-marketplace.blueglassblock.better-json5
-              exts.vscode-marketplace.editorconfig.editorconfig
-              exts.vscode-marketplace.esbenp.prettier-vscode
-              exts.vscode-marketplace.nefrob.vscode-just-syntax
-              exts.vscode-marketplace.redhat.vscode-yaml
-              exts.vscode-marketplace.sleistner.vscode-fileutils
-              exts.vscode-marketplace.stkb.rewrap
-              exts.vscode-marketplace.streetsidesoftware.code-spell-checker
-              exts.vscode-marketplace.tamasfe.even-better-toml
-              exts.vscode-marketplace.vscodevim.vim
+              exts.vscode-marketplace-release.ast-grep.ast-grep-vscode
+              exts.vscode-marketplace-release.bierner.emojisense
+              exts.vscode-marketplace-release.blueglassblock.better-json5
+              exts.vscode-marketplace-release.editorconfig.editorconfig
+              exts.vscode-marketplace-release.esbenp.prettier-vscode
+              exts.vscode-marketplace-release.nefrob.vscode-just-syntax
+              exts.vscode-marketplace-release.redhat.vscode-yaml
+              exts.vscode-marketplace-release.sleistner.vscode-fileutils
+              exts.vscode-marketplace-release.stkb.rewrap
+              exts.vscode-marketplace-release.streetsidesoftware.code-spell-checker
+              exts.vscode-marketplace-release.tamasfe.even-better-toml
+              exts.vscode-marketplace-release.vscodevim.vim
             ]
             ++ lib.optionals cfg.github-actions.enable [
-              exts.vscode-marketplace.github.vscode-github-actions
+              exts.vscode-marketplace-release.github.vscode-github-actions
             ]
             ++ lib.optionals cfg.go.enable [
-              exts.vscode-marketplace.golang.go
+              exts.vscode-marketplace-release.golang.go
             ]
             ++ lib.optionals cfg.iac.enable [
-              exts.vscode-marketplace.hashicorp.hcl
-              exts.vscode-marketplace.hashicorp.terraform
-              exts.vscode-marketplace.ms-kubernetes-tools.vscode-kubernetes-tools
+              exts.vscode-marketplace-release.hashicorp.hcl
+              exts.vscode-marketplace-release.hashicorp.terraform
+              exts.vscode-marketplace-release.ms-kubernetes-tools.vscode-kubernetes-tools
             ]
             ++ lib.optionals cfg.javascript.enable [
-              exts.vscode-marketplace.dbaeumer.vscode-eslint
-              exts.vscode-marketplace.orta.vscode-jest
-              exts.vscode-marketplace.yoavbls.pretty-ts-errors
+              exts.vscode-marketplace-release.dbaeumer.vscode-eslint
+              exts.vscode-marketplace-release.orta.vscode-jest
+              exts.vscode-marketplace-release.yoavbls.pretty-ts-errors
             ]
             ++ lib.optionals cfg.nix.enable [
-              exts.vscode-marketplace.jnoortheen.nix-ide
+              exts.vscode-marketplace-release.jnoortheen.nix-ide
             ]
             ++ lib.optionals cfg.python.enable [
-              exts.open-vsx.detachhead.basedpyright
-              exts.vscode-marketplace.charliermarsh.ruff
-              exts.vscode-marketplace.matangover.mypy
-              exts.vscode-marketplace.ms-python.black-formatter
-              exts.vscode-marketplace.ms-python.debugpy
-              exts.vscode-marketplace.ms-python.python
+              exts.open-vsx-release.detachhead.basedpyright
+              exts.vscode-marketplace-release.charliermarsh.ruff
+              exts.vscode-marketplace-release.matangover.mypy
+              exts.vscode-marketplace-release.ms-python.black-formatter
+              exts.vscode-marketplace-release.ms-python.debugpy
+              exts.vscode-marketplace-release.ms-python.python
             ]
             ++ lib.optionals cfg.rust.enable [
-              exts.vscode-marketplace.rust-lang.rust-analyzer
+              exts.vscode-marketplace-release.rust-lang.rust-analyzer
               # disabled because build is broken
-              # exts.vscode-marketplace.vadimcn.vscode-lldb
+              # exts.vscode-marketplace-release.vadimcn.vscode-lldb
             ]
             ++ lib.optionals cfg.shell.enable [
-              exts.vscode-marketplace.bmalehorn.vscode-fish
-              exts.vscode-marketplace.timonwong.shellcheck
+              exts.vscode-marketplace-release.bmalehorn.vscode-fish
+              exts.vscode-marketplace-release.timonwong.shellcheck
             ]
             ++ lib.optionals cfg.web.enable [
-              exts.vscode-marketplace.astro-build.astro-vscode
-              exts.vscode-marketplace.bradlc.vscode-tailwindcss
-              exts.vscode-marketplace.unifiedjs.vscode-mdx
+              exts.vscode-marketplace-release.astro-build.astro-vscode
+              exts.vscode-marketplace-release.bradlc.vscode-tailwindcss
+              exts.vscode-marketplace-release.unifiedjs.vscode-mdx
             ];
           userSettings =
             {
