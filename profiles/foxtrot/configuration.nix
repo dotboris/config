@@ -55,8 +55,8 @@
     services.libinput.enable = true; # touchpad support
 
     services.ollama = {
-      package = pkgs.ollama-rocm;
-      rocmOverrideGfx = "11.0.2";
+      package = pkgs.ollama;
+      # rocmOverrideGfx = "11.0.2";
       environmentVariables = {
         OLLAMA_FLASH_ATTENTION = "1";
         OLLAMA_KV_CACHE_TYPE = "q8_0";
