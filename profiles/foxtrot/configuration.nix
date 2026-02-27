@@ -6,6 +6,7 @@
   flake.profiles.foxtrot.nixos = {pkgs, ...}: {
     imports = [
       inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
+      self.nixosModules.base
       self.nixosModules.gaming
       self.nixosModules.playwright
       self.nixosModules.users
@@ -19,7 +20,6 @@
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
     networking.hostName = "foxtrot";
