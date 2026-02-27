@@ -33,7 +33,6 @@
     flake-parts,
     import-tree,
     home-manager,
-    nix-vscode-extensions,
     ...
   }:
     flake-parts.lib.mkFlake {inherit inputs;} ({...}: {
@@ -54,13 +53,6 @@
         system,
         ...
       }: {
-        _module.args.pkgs = import nixpkgs {
-          inherit system;
-          overlays = [
-            nix-vscode-extensions.overlays.default
-          ];
-          config.allowUnfree = true;
-        };
         formatter = pkgs.writeShellApplication {
           name = "alejandra-format-repo";
           runtimeInputs = [pkgs.alejandra];

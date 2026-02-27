@@ -1,4 +1,4 @@
-{...}: {
+{inputs, ...}: {
   flake.homeModules.vscode = {
     config,
     lib,
@@ -22,6 +22,9 @@
     };
 
     config = mkIf cfg.enable {
+      nixpkgs.overlays = [
+        inputs.nix-vscode-extensions.overlays.default
+      ];
       programs.vscode = let
         package = pkgs.vscodium;
       in {

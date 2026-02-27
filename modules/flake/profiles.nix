@@ -41,12 +41,11 @@ in {
     nixosConfigurations = lib.pipe config.flake.profiles [
       (lib.filterAttrs (_: profile: profile.nixos != null))
       (lib.mapAttrs (
-        name: profile: (withSystem profile.system ({pkgs, ...}:
+        name: profile:
           nixosSystem {
-            inherit pkgs;
             inherit (profile) system;
             modules = [profile.nixos];
-          }))
+          }
       ))
     ];
 
