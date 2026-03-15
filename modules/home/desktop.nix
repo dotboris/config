@@ -9,6 +9,7 @@
       pkgs.firefox
       pkgs.keepassxc
       pkgs.libreoffice-qt-fresh
+      (config.lib.nixGL.wrap pkgs.jellyfin-desktop)
       (config.lib.nixGL.wrap pkgs.nextcloud-client)
       pkgs.telegram-desktop
       pkgs.thunderbird
