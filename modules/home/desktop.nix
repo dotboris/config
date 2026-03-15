@@ -5,14 +5,14 @@
     ...
   }: {
     home.packages = [
-      pkgs.chromium
-      pkgs.firefox
+      (config.lib.nixGL.wrap pkgs.chromium)
+      (config.lib.nixGL.wrap pkgs.firefox)
       pkgs.keepassxc
       pkgs.libreoffice-qt-fresh
       (config.lib.nixGL.wrap pkgs.jellyfin-desktop)
       (config.lib.nixGL.wrap pkgs.nextcloud-client)
       pkgs.telegram-desktop
-      pkgs.thunderbird
+      (config.lib.nixGL.wrap pkgs.thunderbird)
       (config.lib.nixGL.wrap inputs'.zen-browser.packages.default)
 
       # Spell Checking
