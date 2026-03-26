@@ -27,13 +27,13 @@
         pkgs.pango
         pkgs.stdenv.cc.cc.lib
         pkgs.systemd
-        pkgs.xorg.libX11
-        pkgs.xorg.libXcomposite
-        pkgs.xorg.libXdamage
-        pkgs.xorg.libXext
-        pkgs.xorg.libXfixes
-        pkgs.xorg.libXrandr
-        pkgs.xorg.libxcb
+        pkgs.libx11
+        pkgs.libxcomposite
+        pkgs.libxdamage
+        pkgs.libxext
+        pkgs.libxfixes
+        pkgs.libxrandr
+        pkgs.libxcb
       ];
     };
   };
