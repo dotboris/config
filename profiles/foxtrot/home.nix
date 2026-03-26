@@ -31,7 +31,7 @@
       web.enable = true;
     };
 
-    home.stateVersion = "25.05"; # Please read the comment before changing.
+    home.stateVersion = "26.05"; # Only change this if a warning tells you to!
 
     # Linux specific tweaks & integrations.
     xdg.enable = true;
