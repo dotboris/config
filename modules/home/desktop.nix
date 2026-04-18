@@ -14,6 +14,7 @@
       pkgs.telegram-desktop
       (config.lib.nixGL.wrap pkgs.thunderbird)
       (config.lib.nixGL.wrap inputs'.zen-browser.packages.default)
+      pkgs.picard
 
       # Spell Checking
       pkgs.hunspell
