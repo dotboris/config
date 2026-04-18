@@ -31,6 +31,7 @@
         "archive-test-foxtrot.dotboris.io"
         "cloud-test-foxtrot.dotboris.io"
         "feeds-test-foxtrot.dotboris.io"
+        "music-test-foxtrot.dotboris.io"
         "netdata-test-foxtrot.dotboris.io"
         "ntfy-test-foxtrot.dotboris.io"
         "traefik-test-foxtrot.dotboris.io"
