@@ -27,6 +27,7 @@
     networking.hosts = {
       "192.168.122.3" = [
         "homelab-test-foxtrot.lan"
+        "files-test-foxtrot.dotboris.io"
         "home-test-foxtrot.dotboris.io"
         "archive-test-foxtrot.dotboris.io"
         "cloud-test-foxtrot.dotboris.io"
