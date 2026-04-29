@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.profiles.coveo-macbook.home = {...}: {
+  flake.profiles.coveo-macbook.home = {pkgs,...}: {
     imports = [
       self.homeModules.aws
       self.homeModules.base
@@ -13,6 +13,17 @@
 
     home.username = "bbera";
     home.homeDirectory = "/Users/bbera";
+
+    home.packages = [
+      # Playing around with LSPs
+      pkgs.basedpyright
+      pkgs.bash-language-server
+      pkgs.gopls
+      pkgs.jdt-language-server
+      pkgs.terraform-ls
+      pkgs.typescript-language-server
+      pkgs.yaml-language-server
+    ];
 
     local.git = {
       userName = "Boris Bera";
