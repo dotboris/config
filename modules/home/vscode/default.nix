@@ -25,8 +25,13 @@
       nixpkgs.overlays = [
         inputs.nix-vscode-extensions.overlays.default
       ];
-      programs.vscode = let
+      programs.vscodium = let
         package = pkgs.vscodium;
+        # Hack util https://github.com/NixOS/nixpkgs/pull/510692 merges
+        versionsHack = {
+          "1.112.01907" = "1.112.0";
+        };
+        vscodeVersion = versionsHack.${package.version} or package.vscodeVersion;
       in {
         inherit package;
         enable = true;
@@ -35,7 +40,7 @@
           enableUpdateCheck = false;
           enableExtensionUpdateCheck = false;
           extensions = let
-            exts = (pkgs.nix-vscode-extensions.forVSCodeVersion package.version).usingFixesFrom pkgs;
+            exts = (pkgs.nix-vscode-extensions.forVSCodeVersion vscodeVersion).usingFixesFrom pkgs;
           in
             [
               exts.vscode-marketplace-release.ast-grep.ast-grep-vscode
