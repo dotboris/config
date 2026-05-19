@@ -9,24 +9,29 @@
     lib,
     ...
   }: {
-    home.packages = [
-      # Day to day utils
-      inputs.cdo.packages.${system}.default
+    home.packages =
+      [
+        # Day to day utils
+        inputs.cdo.packages.${system}.default
 
-      pkgs.ripgrep
-      pkgs.fd
-      pkgs.sd
-      pkgs.ast-grep
-      pkgs.watchexec
+        pkgs.ripgrep
+        pkgs.fd
+        pkgs.sd
+        pkgs.ast-grep
+        pkgs.watchexec
 
-      pkgs.jq
-      pkgs.yq
+        pkgs.jq
+        pkgs.yq
 
-      pkgs.jless
+        pkgs.jless
 
-      # For fish.fzf plugin
-      pkgs.fzf
-    ];
+        # For fish.fzf plugin
+        pkgs.fzf
+      ]
+      ++ lib.optionals pkgs.stdenv.isLinux [
+        # Easy waycopy & waypaste commands
+        pkgs.wayclip
+      ];
 
     programs.bat.enable = true;
 
