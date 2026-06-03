@@ -55,9 +55,9 @@
     programs.ssh = {
       enable = true;
       enableDefaultConfig = false;
-      matchBlocks."*" = {
-        addKeysToAgent = "2h";
-        setEnv = {
+      settings."*" = {
+        AddKeysToAgent = "2h";
+        SetEnv = {
           # Most servers don't have `xterm-ghostty` termcap
           TERM = "xterm-256color";
         };

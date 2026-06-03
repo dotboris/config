@@ -14,6 +14,7 @@
       pkgsFlm = import inputs.nixpkgs-fastflowlm {
         inherit system;
       };
+      fastflowlm = pkgsFlm.fastflowlm;
     in {
       options.local.llms = {
         enableAmdNpu = lib.mkEnableOption "Local LLM acceleration with AMD NPU";
@@ -21,7 +22,7 @@
 
       config = lib.mkIf cfg.enableAmdNpu {
         environment.systemPackages = [
-          pkgsFlm.fastflowlm
+          fastflowlm
         ];
 
         users = {
@@ -79,7 +80,7 @@
             StateDirectory = "fastflowlm";
             LimitMEMLOCK = "infinity";
           };
-          path = [pkgsFlm.fastflowlm];
+          path = [fastflowlm];
           preStart = ''
             flm validate
           '';

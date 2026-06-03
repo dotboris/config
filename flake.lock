@@ -206,11 +206,11 @@
     },
     "nixpkgs-fastflowlm": {
       "locked": {
-        "lastModified": 1779226906,
-        "narHash": "sha256-WiflYaJIszZ6bo5jDkG2/bTGQqPrSAxx9UHNT4wtWcw=",
+        "lastModified": 1777254560,
+        "narHash": "sha256-Ag32bXgn58ZjquxihiePpLDbhWF2m9gFfC60sfvwbLw=",
         "owner": "JohnMolotov",
         "repo": "nixpkgs",
-        "rev": "27d84bfe4923ae587d50399ec865422373fc09a7",
+        "rev": "f14aeddb7a0ab0b19cdcbced2ca840f0de578ca8",
         "type": "github"
       },
       "original": {

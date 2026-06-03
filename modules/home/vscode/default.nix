@@ -30,6 +30,7 @@
         # Hack util https://github.com/NixOS/nixpkgs/pull/510692 merges
         versionsHack = {
           "1.112.01907" = "1.112.0";
+          "1.116.02821" = "1.116.0";
         };
         vscodeVersion = versionsHack.${package.version} or package.vscodeVersion;
       in {
