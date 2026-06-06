@@ -1,5 +1,7 @@
 # Config
 
+Personal Nix configuration repo using Home Manager, with NixOS support on some machines.
+
 ## Update
 
 ```sh
