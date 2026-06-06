@@ -10,6 +10,9 @@ git pull
 # Update flake
 nix flake update -L
 
+# Update packages
+nix flake show --json | jq -r '.packages[] | keys[]' | sort -u | xargs -I {} nix-update --flake {}
+
 # Switch configuration
 home-manager switch -L --flake $(pwd)#{host}
 
