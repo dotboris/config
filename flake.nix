@@ -68,6 +68,8 @@
             pkgs.nil
             pkgs.alejandra
 
+            pkgs.nix-update
+
             # home-manager itself
             home-manager.packages.${system}.default
           ];

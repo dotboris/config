@@ -93,7 +93,7 @@
                 baseURL = "http://localhost:11434/v1";
               };
               models = {
-                "gemma4:12b-code" = {
+                "gemma4:opencode" = {
                   name = "Gemma4";
                 };
               };
