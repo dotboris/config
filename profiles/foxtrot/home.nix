@@ -6,6 +6,7 @@
       self.homeModules.neovim
       self.homeModules.git
       self.homeModules.ghostty
+      self.homeModules.llms
       self.homeModules.k8s
       self.homeModules.shell
       self.homeModules.vscode
@@ -17,6 +18,10 @@
     local.git = {
       userName = "Boris Bera";
       userEmail = "beraboris@gmail.com";
+    };
+    local.llms = {
+      enable = true;
+      enableFlm = true;
     };
     local.vscode = {
       enable = true;
