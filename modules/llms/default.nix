@@ -1,4 +1,4 @@
-{...}: {
+{moduleWithSystem, ...}: {
   flake.nixosModules.llms = {
     lib,
     config,
@@ -20,7 +20,7 @@
     };
   };
 
-  flake.homeModules.llms = {
+  flake.homeModules.llms = moduleWithSystem ({self', ...}: {
     config,
     lib,
     ...
@@ -67,8 +67,23 @@
               "git diff*" = "allow";
             };
             external_directory = "ask";
-            websearch = "ask";
             webfetch = "ask";
+            searxng_searxng_web_search = "ask";
+          };
+          mcp = {
+            searxng = {
+              enabled = true;
+              type = "local";
+              command = [(lib.getExe self'.packages.mcp-searxng)];
+              environment.SEARXNG_URL = "https://search.dotboris.io";
+            };
+          };
+          tools = {
+            # Only enable web search for searxng
+            searxng_searxng_web_search = true;
+            "searxng_*" = false;
+            # Disable built-in search (shouldn't work anyways)
+            websearch = false;
           };
           provider = {
             ollama = lib.mkIf cfg.enableOllama {
@@ -105,5 +120,5 @@
         };
       };
     };
-  };
+  });
 }

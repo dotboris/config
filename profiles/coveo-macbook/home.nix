@@ -1,5 +1,5 @@
 {self, ...}: {
-  flake.profiles.coveo-macbook.home = {pkgs,...}: {
+  flake.profiles.coveo-macbook.home = {pkgs, ...}: {
     imports = [
       self.homeModules.aws
       self.homeModules.base
