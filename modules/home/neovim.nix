@@ -7,35 +7,35 @@
       vimdiffAlias = true;
       initLua = ''
         -- show line numbers
-        vim.wo.number = true
-        vim.wo.relativenumber = true
+        vim.opt.number = true
+        vim.opt.relativenumber = true
 
         -- indent with 2 spaces
-        vim.bo.expandtab = true
-        vim.bo.tabstop = 2
-        vim.bo.shiftwidth = 2
-        vim.bo.autoindent = true
-        vim.bo.smartindent = true
+        vim.opt.expandtab = true
+        vim.opt.tabstop = 2
+        vim.opt.shiftwidth = 2
+        vim.opt.autoindent = true
+        vim.opt.smartindent = true
 
         -- search
-        vim.o.ignorecase = true
-        vim.o.smartcase = true
-        vim.o.hlsearch = true
-        vim.o.incsearch = true
+        vim.opt.ignorecase = true
+        vim.opt.smartcase = true
+        vim.opt.hlsearch = true
+        vim.opt.incsearch = true
 
         -- display
-        vim.o.list = true -- show whitespace and the like
+        vim.opt.list = true -- show whitespace and the like
         vim.opt.listchars = {
           tab = "» ",
           trail = "·",
           space = "·",
           nbsp = "␣",
         }
-        vim.wo.cursorline = true -- highlight line at cursor
+        vim.opt.cursorline = true -- highlight line at cursor
 
         -- interaction
         vim.opt.clipboard = "unnamedplus"
-        vim.o.mouse = "a"
+        vim.opt.mouse = "a"
       '';
     };
   };
