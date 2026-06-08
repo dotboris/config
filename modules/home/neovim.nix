@@ -1,42 +1,42 @@
-{...}: {
+{inputs, ...}: {
   flake.homeModules.neovim = {...}: {
-    programs.neovim = {
+    imports = [inputs.nixvim.homeModules.nixvim];
+
+    programs.nixvim = {
       enable = true;
       defaultEditor = true;
       vimAlias = true;
       vimdiffAlias = true;
-      initLua = ''
-        -- show line numbers
-        vim.opt.number = true
-        vim.opt.relativenumber = true
+      opts = {
+        # Indentation
+        expandtab = true;
+        tabstop = 2;
+        shiftwidth = 2;
+        autoindent = true;
+        smartindent = true;
 
-        -- indent with 2 spaces
-        vim.opt.expandtab = true
-        vim.opt.tabstop = 2
-        vim.opt.shiftwidth = 2
-        vim.opt.autoindent = true
-        vim.opt.smartindent = true
+        # Search
+        ignorecase = true;
+        smartcase = true;
+        hlsearch = true;
+        incsearch = true;
 
-        -- search
-        vim.opt.ignorecase = true
-        vim.opt.smartcase = true
-        vim.opt.hlsearch = true
-        vim.opt.incsearch = true
+        # Display
+        number = true;
+        relativenumber = true;
+        list = true;
+        listchars = {
+          tab = "» ";
+          trail = "·";
+          space = "·";
+          nbsp = "␣";
+        };
+        cursorline = true;
 
-        -- display
-        vim.opt.list = true -- show whitespace and the like
-        vim.opt.listchars = {
-          tab = "» ",
-          trail = "·",
-          space = "·",
-          nbsp = "␣",
-        }
-        vim.opt.cursorline = true -- highlight line at cursor
-
-        -- interaction
-        vim.opt.clipboard = "unnamedplus"
-        vim.opt.mouse = "a"
-      '';
+        # Behavior
+        clipboard = "unnamedplus";
+        mouse = "a";
+      };
     };
   };
 }
