@@ -25,7 +25,7 @@
       installBatSyntax = ghostty != null;
       installVimSyntax = ghostty != null;
       settings = {
-        theme = "Dracula+";
+        theme = "Catppuccin Mocha";
         font-family = "Fira Code";
         # Turn off ligatures. They're annoying
         font-feature = [
