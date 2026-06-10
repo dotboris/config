@@ -62,6 +62,7 @@
         };
         cursorline = true;
         signcolumn = "yes";
+        colorcolumn = [80];
 
         # Behavior
         clipboard = "unnamedplus";
