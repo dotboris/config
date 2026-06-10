@@ -62,7 +62,7 @@
         };
         cursorline = true;
         signcolumn = "yes";
-        colorcolumn = [80];
+        colorcolumn = [ 80 ];
 
         # Behavior
         clipboard = "unnamedplus";
@@ -136,6 +136,8 @@
         };
       };
       plugins = {
+        # save & restore session like vscode
+        auto-session.enable = true;
         # auto-complete
         cmp = {
           enable = true;
