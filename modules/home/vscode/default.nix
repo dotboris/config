@@ -44,6 +44,7 @@
             exts = (pkgs.nix-vscode-extensions.forVSCodeVersion vscodeVersion).usingFixesFrom pkgs;
           in
             [
+              exts.open-vsx-release.catppuccin.catppuccin-vsc
               exts.vscode-marketplace-release.ast-grep.ast-grep-vscode
               exts.vscode-marketplace-release.bierner.emojisense
               exts.vscode-marketplace-release.blueglassblock.better-json5
@@ -104,6 +105,7 @@
               "workbench.startupEditor" = "newUntitledFile";
               "workbench.activityBar.location" = "hidden";
               "window.menuBarVisibility" = "compact";
+              "workbench.colorTheme" = "Catppuccin Mocha";
 
               # Customize editor
               "editor.rulers" = [80];
