@@ -133,6 +133,15 @@
             keymap.preset = "enter";
           };
         };
+        # formatting
+        conform = {
+          enable = true;
+          settings.formatters_by_ft = {
+            python = ["ruff"];
+            javacript = ["prettier"];
+            nix = ["alejandra"];
+          };
+        };
         gitsigns.enable = true;
         lspconfig.enable = true;
         # Fuzzy finder
