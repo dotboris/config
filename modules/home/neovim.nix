@@ -122,20 +122,15 @@
         # save & restore session like vscode
         auto-session.enable = true;
         # auto-complete
-        cmp = {
+        blink-cmp = {
           enable = true;
-          autoEnableSource = true;
           settings = {
-            sources = [
-              { name = "nvim_lsp"; }
-              { name = "path"; }
-              { name = "buffer"; }
-            ];
-            mapping = {
-              "<C-Space>" = "cmp.mapping.complete()";
-              "<CR>" = "cmp.mapping.confirm({ select = true })";
-              "<Tab>" = "cmp.mapping.confirm({ select = true })";
+            completion = {
+              accept.auto_brackets.enabled = true;
+              documentation.auto_show = true;
+              signature.enabled = true;
             };
+            keymap.preset = "enter";
           };
         };
         gitsigns.enable = true;
