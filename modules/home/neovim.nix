@@ -4,30 +4,13 @@
 
     programs.nixvim = {
       enable = true;
+      enableMan = false; # don't use it and it's noisy
       defaultEditor = true;
       vimAlias = true;
       vimdiffAlias = true;
       diagnostic.settings.virtual_text = true;
       globals.mapleader = " ";
       keymaps = [
-        {
-          key = "<C-/>";
-          action = "gcc";
-          mode = "n";
-          options = {
-            desc = "Toggle comment";
-            remap = true;
-          };
-        }
-        {
-          key = "<C-/>";
-          action = "gc";
-          mode = "v";
-          options = {
-            desc = "Toggle comment";
-            remap = true;
-          };
-        }
         {
           key = "<leader>bc";
           action = "<cmd>bd<cr>";
@@ -155,7 +138,6 @@
             };
           };
         };
-        bufferline.enable = true;
         gitsigns.enable = true;
         lspconfig.enable = true;
         # Fuzzy finder
@@ -167,10 +149,6 @@
               settings = {
                 auto_depth = true;
                 hijack_netrw = true;
-                hidden = {
-                  file_browser = true;
-                  folder_browser = true;
-                };
                 mappings = {
                   i."<C-x>" = "require('telescope._extensions.file_browser.actions').toggle_respect_gitignore";
                   n.x = "require('telescope._extensions.file_browser.actions').toggle_respect_gitignore";
@@ -182,6 +160,22 @@
             ui-select.enable = true;
           };
           keymaps = {
+            "<leader>," = {
+              action = "buffers";
+              options.desc = "Switch buffer";
+            };
+            "<leader>/" = {
+              action = "live_grep";
+              options.desc = "Grep project";
+            };
+            "<leader> " = {
+              action = "find_files";
+              options.desc = "Find files";
+            };
+            "<leader>:" = {
+              action = "command_history";
+              options.desc = "Command history";
+            };
             "<leader>fc" = {
               action = "commands";
               options.desc = "search commands";
@@ -194,14 +188,6 @@
               action = "keymaps";
               options.desc = "find keymaps";
             };
-            "<leader>fg" = {
-              action = "live_grep";
-              options.desc = "live grep";
-            };
-            "<leader>fb" = {
-              action = "buffers";
-              options.desc = "find buffers";
-            };
             "<leader>fs" = {
               action = "treesitter";
               options.desc = "find symbols";
@@ -209,6 +195,27 @@
             "<leader>fh" = {
               action = "help_tags";
               options.desc = "find help tags";
+            };
+          };
+          settings = {
+            defaults = {
+              mappings = {
+                n.q.__raw = "require('telescope.actions').close";
+              };
+            };
+            pickers = {
+              buffers = {
+                initial_mode = "normal";
+                sort_mru = true;
+                sort_lastused = true;
+                mappings = {
+                  n.d.__raw = "require('telescope.actions').delete_buffer";
+                  i."<C-d>".__raw = "require('telescope.actions').delete_buffer";
+                };
+              };
+              find_files = {
+                hidden = true;
+              };
             };
           };
         };
