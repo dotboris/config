@@ -131,7 +131,7 @@
           rust_analyzer.enable = true;
           statix.enable = true; # nix linter
           tailwindcss.enable = true;
-          tsgo.enable = true;
+          ts_ls.enable = true;
           yamlls.enable = true;
         };
       };
@@ -189,11 +189,6 @@
             "<leader>ff" = {
               action = "file_browser";
               options.desc = "file browser";
-            };
-            # Like vscode
-            "<C-p>" = {
-              action = "git_files";
-              options.desc = "find git files";
             };
             "<leader>fk" = {
               action = "keymaps";
