@@ -111,6 +111,9 @@
         clipboard = "unnamedplus";
         mouse = "a";
         scrolloff = 8;
+
+        # Project settings support
+        exrc = true;
       };
       colorschemes.catppuccin = {
         enable = true;
