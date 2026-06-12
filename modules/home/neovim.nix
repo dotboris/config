@@ -66,26 +66,6 @@
         inlayHints.enable = true;
         keymaps = [
           {
-            key = "gd";
-            lspBufAction = "definition";
-            options.desc = "Go to definition";
-          }
-          {
-            key = "gD";
-            lspBufAction = "references";
-            options.desc = "Go to references";
-          }
-          {
-            key = "gt";
-            lspBufAction = "type_definition";
-            options.desc = "Go to type definition";
-          }
-          {
-            key = "gi";
-            lspBufAction = "implementation";
-            options.desc = "Go to implementation";
-          }
-          {
             key = "K";
             lspBufAction = "hover";
             options.desc = "Hover";
@@ -273,23 +253,51 @@
             };
             "<leader>fc" = {
               action = "commands";
-              options.desc = "search commands";
+              options.desc = "Search commands";
             };
             "<leader>F" = {
               action = "file_browser";
-              options.desc = "file browser";
+              options.desc = "File browser";
             };
             "<leader>fk" = {
               action = "keymaps";
-              options.desc = "find keymaps";
+              options.desc = "Find keymaps";
             };
             "<leader>fs" = {
-              action = "treesitter";
-              options.desc = "find symbols";
+              action = "lsp_document_symbols";
+              options.desc = "Find symbols";
             };
             "<leader>fh" = {
               action = "help_tags";
-              options.desc = "find help tags";
+              options.desc = "Find help tags";
+            };
+            "<leader>fd" = {
+              action = "diagnostics";
+              options.desc = "Find diagnostics";
+            };
+            "gd" = {
+              action = "lsp_definitions";
+              options.desc = "Go to definition";
+            };
+            "gD" = {
+              action = "lsp_references";
+              options.desc = "Go to references";
+            };
+            "gt" = {
+              action = "lsp_type_definitions";
+              options.desc = "Go to type definition";
+            };
+            "gi" = {
+              action = "lsp_implementations";
+              options.desc = "Go to implementations";
+            };
+            "gI" = {
+              action = "lsp_incoming_calls";
+              options.desc = "Go to incoming calls";
+            };
+            "gO" = {
+              action = "lsp_outgoing_calls";
+              options.desc = "Go to outgoing calls";
             };
           };
           settings = {
