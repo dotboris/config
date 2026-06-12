@@ -128,18 +128,18 @@
             completion = {
               accept.auto_brackets.enabled = true;
               documentation.auto_show = true;
-              signature.enabled = true;
             };
             keymap.preset = "enter";
+            signature.enabled = true;
           };
         };
         # formatting
         conform = {
           enable = true;
           settings.formatters_by_ft = {
-            python = ["ruff"];
-            javacript = ["prettier"];
-            nix = ["alejandra"];
+            python = [ "ruff" ];
+            javacript = [ "prettier" ];
+            nix = [ "alejandra" ];
           };
         };
         gitsigns.enable = true;
