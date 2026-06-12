@@ -65,6 +65,18 @@
           action = "<cmd>Trouble qflist toggle<cr>";
           options.desc = "Quickfix List (Trouble)";
         }
+        {
+          mode = "n";
+          key = "<leader>dp";
+          action = "<cmd>Oil<cr>";
+          options.desc = "Open parent directory (Oil)";
+        }
+        {
+          mode = "n";
+          key = "<leader>dr";
+          action = "<cmd>e .<cr>";
+          options.desc = "Open project root (Oil)";
+        }
       ];
       opts = {
         # Indentation
@@ -255,8 +267,19 @@
         lspconfig.enable = true;
         mini-ai.enable = true;
         mini-comment.enable = true;
+        mini-icons.enable = true;
         mini-pairs.enable = true;
         mini-surround.enable = true;
+        # File browser
+        oil = {
+          enable = true;
+          settings = {
+            columns = ["icon" "permissions" "size" "mtime"];
+            view_options.show_hidden = true;
+            win_options.signcolumn = "yes:2"; # for oil-git-status
+          }; 
+        };
+        oil-git-status.enable = true;
         # Fuzzy finder
         telescope = {
           enable = true;
@@ -265,7 +288,6 @@
               enable = true;
               settings = {
                 auto_depth = true;
-                hijack_netrw = true;
                 mappings = {
                   i."<C-x>" = "require('telescope._extensions.file_browser.actions').toggle_respect_gitignore";
                   n.x = "require('telescope._extensions.file_browser.actions').toggle_respect_gitignore";
@@ -376,6 +398,7 @@
         # Show context on top of file
         treesitter-context.enable = true;
         trouble.enable = true;
+        web-devicons.enable = true;
         which-key.enable = true;
       };
     };
