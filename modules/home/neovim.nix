@@ -19,7 +19,7 @@
         }
         {
           mode = "n";
-          key = "<leader>f";
+          key = "gf";
           action.__raw = "require('conform').format";
           options.desc = "Format document";
         }
@@ -137,15 +137,17 @@
         # formatting
         conform-nvim = {
           enable = true;
+          autoInstall.enable = true; # Install formatters automatically
           settings = {
             default_format_opts = {
+              async = true;
               lsp_format = "fallback";
-              stop_after_first = true;
             };
             formatters_by_ft = {
-              python = ["ruff"];
-              javacript = ["prettier"];
+              javacript = ["eslint_d" "prettierd"];
+              json = ["prettierd"];
               nix = ["alejandra"];
+              python = ["ruff_fix" "ruff_format"];
             };
           };
         };
@@ -191,7 +193,7 @@
               action = "commands";
               options.desc = "search commands";
             };
-            "<leader>ff" = {
+            "<leader>F" = {
               action = "file_browser";
               options.desc = "file browser";
             };
