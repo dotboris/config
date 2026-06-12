@@ -143,11 +143,16 @@
               async = true;
               lsp_format = "fallback";
             };
-            formatters_by_ft = {
-              javacript = ["eslint_d" "prettierd"];
+            formatters_by_ft = let
+              jsFamily = ["eslint_d" "prettierd"];
+            in {
+              javacript = jsFamily;
+              javacriptreact = jsFamily;
               json = ["prettierd"];
               nix = ["alejandra"];
               python = ["ruff_fix" "ruff_format"];
+              typescript = jsFamily;
+              typescriptreact = jsFamily;
             };
           };
         };
