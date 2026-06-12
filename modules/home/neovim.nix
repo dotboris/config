@@ -1,6 +1,6 @@
-{ inputs, ... }: {
-  flake.homeModules.neovim = { ... }: {
-    imports = [ inputs.nixvim.homeModules.nixvim ];
+{inputs, ...}: {
+  flake.homeModules.neovim = {...}: {
+    imports = [inputs.nixvim.homeModules.nixvim];
 
     programs.nixvim = {
       enable = true;
@@ -12,10 +12,16 @@
       globals.mapleader = " ";
       keymaps = [
         {
+          mode = "n";
           key = "<leader>bc";
           action = "<cmd>bd<cr>";
-          mode = "n";
           options.desc = "Close current buffer";
+        }
+        {
+          mode = "n";
+          key = "<leader>f";
+          action.__raw = "require('conform').format";
+          options.desc = "Format document";
         }
       ];
       opts = {
@@ -45,7 +51,7 @@
         };
         cursorline = true;
         signcolumn = "yes";
-        colorcolumn = [ 80 ];
+        colorcolumn = [80];
 
         # Behavior
         clipboard = "unnamedplus";
@@ -78,11 +84,6 @@
             key = "gi";
             lspBufAction = "implementation";
             options.desc = "Go to implementation";
-          }
-          {
-            key = "gf";
-            lspBufAction = "format";
-            options.desc = "Format document";
           }
           {
             key = "K";
@@ -134,12 +135,18 @@
           };
         };
         # formatting
-        conform = {
+        conform-nvim = {
           enable = true;
-          settings.formatters_by_ft = {
-            python = [ "ruff" ];
-            javacript = [ "prettier" ];
-            nix = [ "alejandra" ];
+          settings = {
+            default_format_opts = {
+              lsp_format = "fallback";
+              stop_after_first = true;
+            };
+            formatters_by_ft = {
+              python = ["ruff"];
+              javacript = ["prettier"];
+              nix = ["alejandra"];
+            };
           };
         };
         gitsigns.enable = true;
@@ -159,7 +166,7 @@
                 };
               };
             };
-            frequency.enable = true;
+            frecency.enable = true;
             fzf-native.enable = true;
             ui-select.enable = true;
           };
@@ -203,6 +210,9 @@
           };
           settings = {
             defaults = {
+              file_ignore_patterns = [
+                "^.git/"
+              ];
               mappings = {
                 n.q.__raw = "require('telescope.actions').close";
               };
