@@ -8,7 +8,13 @@
       defaultEditor = true;
       vimAlias = true;
       vimdiffAlias = true;
-      diagnostic.settings.virtual_text = true;
+      diagnostic.settings = {
+        virtual_text = {
+          severity.min = "WARN";
+          source = "if_many";
+        };
+        severity_sort = true;
+      };
       globals.mapleader = " ";
       keymaps = [
         {
