@@ -33,7 +33,10 @@
         pkgs.wayclip
       ];
 
-    programs.bat.enable = true;
+    programs.bat = {
+      enable = true;
+      config.theme = "Catppuccin Mocha";
+    };
 
     programs.btop = {
       enable = true;
