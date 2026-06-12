@@ -158,6 +158,10 @@
         };
         gitsigns.enable = true;
         lspconfig.enable = true;
+        mini-ai.enable = true;
+        mini-comment.enable = true;
+        mini-pairs.enable = true;
+        mini-surround.enable = true;
         # Fuzzy finder
         telescope = {
           enable = true;
