@@ -197,7 +197,6 @@
           enable = true;
           settings = {
             current_line_blame = true;
-            word_diff = true;
             # Mappings require lua because they're only set when plugin
             # attaches to a buffer
             on_attach = ''
@@ -280,7 +279,7 @@
             columns = ["icon" "permissions" "size" "mtime"];
             view_options.show_hidden = true;
             win_options.signcolumn = "yes:2"; # for oil-git-status
-          }; 
+          };
         };
         oil-git-status.enable = true;
         # Fuzzy finder
