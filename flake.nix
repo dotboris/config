@@ -1,7 +1,10 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-fastflowlm.url = "github:JohnMolotov/nixpkgs/fastflowlm";
+    # Actual ref is the `fastflowlm` branch but 3 weeks ago that broke because
+    # of a syntax error and hasn't been touched since. Pinning to a commit to
+    # avoid breakage every update.
+    nixpkgs-fastflowlm.url = "github:JohnMolotov/nixpkgs/f14aeddb7a0ab0b19cdcbced2ca840f0de578ca8";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     nixgl = {
