@@ -146,6 +146,7 @@
           html.enable = true;
           jsonls.enable = true;
           just.enable = true;
+          marksman.enable = true; # markdown
           nil_ls.enable = true; # nix
           nushell.enable = true;
           ruff.enable = true;
