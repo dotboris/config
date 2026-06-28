@@ -284,6 +284,8 @@
           };
         };
         oil-git-status.enable = true;
+        # Provides standard schema definitions for json & yaml lsps
+        schemastore.enable = true;
         # Fuzzy finder
         telescope = {
           enable = true;
