@@ -153,6 +153,7 @@
           rust_analyzer.enable = true;
           statix.enable = true; # nix linter
           tailwindcss.enable = true;
+          terraform-ls.enable = true;
           ts_ls.enable = true;
           yamlls.enable = true;
         };
