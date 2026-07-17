@@ -63,8 +63,14 @@
             bash = {
               "*" = "ask";
               "grep *" = "allow";
-              "git status*" = "allow";
-              "git diff*" = "allow";
+              "rg *" = "allow";
+              "cat *" = "allow";
+              "echo *" = "allow";
+              "git status *" = "allow";
+              "git diff *" = "allow";
+              "git show *" = "allow";
+              "git grep *" = "allow";
+              "git log *" = "allow";
             };
             external_directory = "ask";
             webfetch = "ask";
