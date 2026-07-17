@@ -83,16 +83,25 @@
     services.fwupd.enable = true;
 
     nix = {
-      settings = {
-        experimental-features = ["nix-command" "flakes"];
-        cores = 0;
-        max-jobs = "auto";
-      };
       gc = {
         automatic = true;
         dates = "weekly";
       };
       optimise.automatic = true;
+    };
+    nix.settings = {
+      experimental-features = [
+        "nix-command" # flakes
+        "flakes" # flakes
+        "auto-allocate-uids" # container tests
+        "cgroups" # container tests
+      ];
+      extra-system-features = [
+        "uid-range" # container tests
+      ];
+      cores = 0;
+      max-jobs = "auto";
+      auto-allocate-uids = true; # container tests
     };
   };
 }
