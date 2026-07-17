@@ -13,6 +13,8 @@
       cfg = config.local.llms;
       pkgsFlm = import inputs.nixpkgs-fastflowlm {
         inherit system;
+        config.allowUnfreePredicate = pkg:
+          builtins.elem (lib.getName pkg) ["fastflowlm"];
       };
       fastflowlm = pkgsFlm.fastflowlm;
     in {
@@ -21,6 +23,10 @@
       };
 
       config = lib.mkIf cfg.enableAmdNpu {
+        nixpkgs.allowUnfreePackages = [
+          "fastflowlm"
+        ];
+
         environment.systemPackages = [
           fastflowlm
         ];
