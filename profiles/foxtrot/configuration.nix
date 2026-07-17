@@ -34,16 +34,18 @@
     networking.hosts = {
       "192.168.122.3" = [
         "homelab-test-foxtrot.lan"
-        "files-test-foxtrot.dotboris.io"
-        "home-test-foxtrot.dotboris.io"
         "archive-test-foxtrot.dotboris.io"
+        "auth-test-foxtrot.dotboris.io"
         "cloud-test-foxtrot.dotboris.io"
         "feeds-test-foxtrot.dotboris.io"
+        "files-test-foxtrot.dotboris.io"
+        "home-test-foxtrot.dotboris.io"
+        "ldap-test-foxtrot.dotboris.io"
         "music-test-foxtrot.dotboris.io"
         "netdata-test-foxtrot.dotboris.io"
         "ntfy-test-foxtrot.dotboris.io"
-        "traefik-test-foxtrot.dotboris.io"
         "search-test-foxtrot.dotboris.io"
+        "traefik-test-foxtrot.dotboris.io"
       ];
     };
     services.resolved.enable = true;
