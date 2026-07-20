@@ -15,6 +15,9 @@
         };
         severity_sort = true;
       };
+      filetype.extension = {
+        mdx = "markdown";
+      };
       globals.mapleader = " ";
       keymaps = [
         {
@@ -147,6 +150,7 @@
           jsonls.enable = true;
           just.enable = true;
           marksman.enable = true; # markdown
+          mdx_analyzer.enable = true;
           nil_ls.enable = true; # nix
           nushell.enable = true;
           ruff.enable = true;
