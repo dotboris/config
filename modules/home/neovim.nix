@@ -149,6 +149,7 @@
           html.enable = true;
           jsonls.enable = true;
           just.enable = true;
+          lua_ls.enable = true;
           marksman.enable = true; # markdown
           mdx_analyzer.enable = true;
           nil_ls.enable = true; # nix
