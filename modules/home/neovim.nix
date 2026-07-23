@@ -70,13 +70,13 @@
         }
         {
           mode = "n";
-          key = "<leader>dp";
+          key = "<leader>d.";
           action = "<cmd>Oil<cr>";
           options.desc = "Open parent directory (Oil)";
         }
         {
           mode = "n";
-          key = "<leader>dr";
+          key = "<leader>d/";
           action = "<cmd>e .<cr>";
           options.desc = "Open project root (Oil)";
         }
@@ -129,11 +129,6 @@
             key = "K";
             lspBufAction = "hover";
             options.desc = "Hover";
-          }
-          {
-            action = "<CMD>lsp restart<Enter>";
-            key = "<leader>lr";
-            options.desc = "Restart LSP servers";
           }
         ];
         servers = {
