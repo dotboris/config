@@ -64,7 +64,10 @@
               "*" = "ask";
               "grep *" = "allow";
               "rg *" = "allow";
+              "ls *" = "allow";
               "cat *" = "allow";
+              "head *" = "allow";
+              "tail *" = "allow";
               "echo *" = "allow";
               "git status *" = "allow";
               "git diff *" = "allow";
