@@ -114,15 +114,8 @@
                 baseURL = "http://localhost:52625/v1";
               };
               models = {
-                "llama3.2:1b" = {
-                  name = "LLama 3.2 1b";
-                };
-                "qwen3:8b" = {
-                  name = "Qwen3 8b";
-                };
-                "gpt-oss:20b" = {
-                  name = "GPT OSS";
-                };
+                "llama3.2:1b".name = "LLama 3.2 1b";
+                "gemma4-it:e4b".name = "Gemma4";
               };
             };
           };
