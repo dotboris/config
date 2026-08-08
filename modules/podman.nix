@@ -10,6 +10,7 @@
         };
       };
     };
+    environment.systemPackages = [pkgs.podman-compose];
     users.users.dotboris.extraGroups = ["podman"];
   };
 }
