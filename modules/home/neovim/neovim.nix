@@ -22,12 +22,6 @@
       keymaps = [
         {
           mode = "n";
-          key = "<leader>bc";
-          action = "<cmd>bd<cr>";
-          options.desc = "Close current buffer";
-        }
-        {
-          mode = "n";
           key = "gf";
           action.__raw = "require('conform').format";
           options.desc = "Format document";
