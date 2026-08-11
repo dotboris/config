@@ -21,31 +21,19 @@
         {
           mode = "n";
           key = "<F11>";
-          action.__raw = ''
-            function()
-              require('dap').step_into()
-            end
-          '';
+          action.__raw = "function() require('dap').step_into() end";
           options.desc = "Step into";
         }
         {
           mode = "n";
           key = "<F12>";
-          action.__raw = ''
-            function()
-              require('dap').step_out()
-            end
-          '';
+          action.__raw = "function() require('dap').step_out() end";
           options.desc = "Step out";
         }
         {
           mode = "n";
           key = "<leader>db";
-          action.__raw = ''
-            function()
-              require('dap').toggle_breakpoint()
-            end
-          '';
+          action.__raw = "function() require('dap').toggle_breakpoint() end";
           options.desc = "Toggle breakpoint";
         }
         {
@@ -65,31 +53,19 @@
         {
           mode = "n";
           key = "<leader>dl";
-          action.__raw = ''
-            function()
-              require('dap').run_last()
-            end
-          '';
+          action.__raw = "function() require('dap').run_last() end";
           options.desc = "Run last";
         }
         {
           mode = "n";
           key = "<leader>dq";
-          action.__raw = ''
-            function()
-              require('dap').terminate()
-            end
-          '';
+          action.__raw = "function() require('dap').terminate() end";
           options.desc = "Terminate debug session";
         }
         {
           mode = "n";
           key = "<leader>dv";
-          action.__raw = ''
-            function()
-              require('dap-view').toggle()
-            end
-          '';
+          action.__raw = "function() require('dap-view').toggle() end";
           options.desc = "Toggle debug view";
         }
       ];
