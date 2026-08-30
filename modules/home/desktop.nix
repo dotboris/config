@@ -8,7 +8,7 @@
       (config.lib.nixGL.wrap pkgs.chromium)
       (config.lib.nixGL.wrap pkgs.firefox)
       pkgs.keepassxc
-      pkgs.libreoffice-qt-fresh
+      pkgs.libreoffice-qt-stable
       (config.lib.nixGL.wrap pkgs.jellyfin-desktop)
       (config.lib.nixGL.wrap pkgs.nextcloud-client)
       pkgs.telegram-desktop

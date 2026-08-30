@@ -28,7 +28,7 @@
         # For fish.fzf plugin
         pkgs.fzf
       ]
-      ++ lib.optionals pkgs.stdenv.isLinux [
+      ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
         # Easy waycopy & waypaste commands
         pkgs.wayclip
       ];
@@ -54,7 +54,7 @@
     };
 
     # Only works on linux
-    services.ssh-agent.enable = pkgs.stdenv.isLinux;
+    services.ssh-agent.enable = pkgs.stdenv.hostPlatform.isLinux;
     programs.ssh = {
       enable = true;
       enableDefaultConfig = false;
@@ -106,7 +106,7 @@
       # PATH entries are added directly to the PATH var and to fish_user_paths to
       # ensure that nix shells can prepend stuff to the path correctly.
       interactiveShellInit = ''
-        ${lib.strings.optionalString pkgs.stdenv.isDarwin ''
+        ${lib.strings.optionalString pkgs.stdenv.hostPlatform.isDarwin ''
           fish_add_path --prepend --path /opt/homebrew/bin
         ''}
         fish_add_path --prepend --path ~/go/bin

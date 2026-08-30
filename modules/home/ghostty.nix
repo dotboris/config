@@ -5,7 +5,7 @@
     ...
   }: let
     ghostty =
-      if pkgs.stdenv.isLinux
+      if pkgs.stdenv.hostPlatform.isLinux
       then (config.lib.nixGL.wrap pkgs.ghostty)
       else
         # `pkgs.ghostty-bin` works on mac but home-manager installs apps
