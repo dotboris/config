@@ -30,7 +30,6 @@
     options.local.llms = {
       enable = lib.mkEnableOption "LLM tooling";
       enableOllama = lib.mkEnableOption "Ollama integration";
-      enableFlm = lib.mkEnableOption "FastFlowLM integration";
     };
 
     config = lib.mkIf cfg.enable {
@@ -56,8 +55,7 @@
           share = "disabled";
           enabled_providers =
             []
-            ++ lib.optionals cfg.enableOllama ["ollama"]
-            ++ lib.optionals cfg.enableFlm ["fastflowlm"];
+            ++ lib.optionals cfg.enableOllama ["ollama"];
           permission = {
             edit = "ask";
             bash = {
@@ -105,17 +103,6 @@
                 "gemma4:opencode" = {
                   name = "Gemma4";
                 };
-              };
-            };
-            fastflowlm = lib.mkIf cfg.enableFlm {
-              npm = "@ai-sdk/openai-compatible";
-              name = "FastFlowLM";
-              options = {
-                baseURL = "http://localhost:52625/v1";
-              };
-              models = {
-                "llama3.2:1b".name = "LLama 3.2 1b";
-                "gemma4-it:e4b".name = "Gemma4";
               };
             };
           };

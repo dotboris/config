@@ -12,14 +12,8 @@
       self.nixosModules.users
       self.nixosModules.tailscale
       self.nixosModules.vms
-      # self.nixosModules.llms
       self.nixosModules.podman
     ];
-
-    # local.llms = {
-    #   enable = true;
-    #   enableAmdNpu = true;
-    # };
 
     system.stateVersion = "25.05";
     boot.loader.systemd-boot = {
@@ -64,15 +58,6 @@
       pulse.enable = true;
     };
     services.libinput.enable = true; # touchpad support
-
-    # services.ollama = {
-    #   package = pkgs.ollama;
-    #   rocmOverrideGfx = "11.0.2";
-    #   environmentVariables = {
-    #     OLLAMA_FLASH_ATTENTION = "1";
-    #     OLLAMA_KV_CACHE_TYPE = "q8_0";
-    #   };
-    # };
 
     environment.systemPackages = [
       pkgs.neovim

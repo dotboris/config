@@ -1,8 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # Updating by hand. Updates have been bad in the past.
-    nixpkgs-fastflowlm.url = "github:JohnMolotov/nixpkgs/1f24460ba1a72972800829335b25fa785ab7ebd4"; # branch: fastflowlm
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     nixgl = {
