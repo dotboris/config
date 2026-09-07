@@ -19,10 +19,10 @@
       userName = "Boris Bera";
       userEmail = "beraboris@gmail.com";
     };
-    local.llms = {
-      enable = true;
-      enableFlm = true;
-    };
+    # local.llms = {
+    #   enable = true;
+    #   enableFlm = true;
+    # };
     local.vscode = {
       enable = true;
       github-actions.enable = true;
