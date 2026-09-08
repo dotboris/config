@@ -4,24 +4,28 @@
     pkgs,
     ...
   }: {
-    home.packages = [
-      (config.lib.nixGL.wrap pkgs.chromium)
-      (config.lib.nixGL.wrap pkgs.firefox)
-      pkgs.keepassxc
-      pkgs.libreoffice-qt-stable
-      (config.lib.nixGL.wrap pkgs.jellyfin-desktop)
-      (config.lib.nixGL.wrap pkgs.nextcloud-client)
-      pkgs.telegram-desktop
-      (config.lib.nixGL.wrap pkgs.thunderbird)
-      (config.lib.nixGL.wrap inputs'.zen-browser.packages.default)
-      pkgs.picard
+    home.packages = let
+      ps = [
+        pkgs.chromium
+        pkgs.firefox
+        pkgs.keepassxc
+        pkgs.libreoffice-qt-stable
+        pkgs.jellyfin-desktop
+        pkgs.nextcloud-client
+        pkgs.picard
+        pkgs.signal-desktop
+        pkgs.telegram-desktop
+        pkgs.thunderbird
+        inputs'.zen-browser.packages.default
 
-      # Spell Checking
-      pkgs.hunspell
-      pkgs.hunspellDicts.en-us-large
-      pkgs.hunspellDicts.en-ca-large
-      pkgs.hunspellDicts.fr-moderne
-    ];
+        # Spell Checking
+        pkgs.hunspell
+        pkgs.hunspellDicts.en-us-large
+        pkgs.hunspellDicts.en-ca-large
+        pkgs.hunspellDicts.fr-moderne
+      ];
+    in
+      builtins.map config.lib.nixGL.wrap ps;
 
     gtk = {
       enable = true;
