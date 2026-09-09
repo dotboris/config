@@ -21,7 +21,7 @@
 
     local.git = {
       userName = "Boris Bera";
-      userEmail = "beraboris@gmail.com";
+      userEmail = "boris@dotboris.io";
     };
     local.llms = {
       enable = true;
