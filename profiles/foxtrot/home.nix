@@ -4,6 +4,7 @@
       self.homeModules.base
       self.homeModules.desktop
       self.homeModules.neovim
+      self.homeModules.gaming
       self.homeModules.git
       self.homeModules.ghostty
       self.homeModules.llms
