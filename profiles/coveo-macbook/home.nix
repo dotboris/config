@@ -8,39 +8,21 @@
       self.homeModules.git
       self.homeModules.k8s
       self.homeModules.shell
-      self.homeModules.vscode
     ];
 
     home.username = "bbera";
     home.homeDirectory = "/Users/bbera";
 
-    home.packages = [
-      # Playing around with LSPs
-      pkgs.basedpyright
-      pkgs.bash-language-server
-      pkgs.gopls
-      pkgs.jdt-language-server
-      pkgs.terraform-ls
-      pkgs.typescript-language-server
-      pkgs.yaml-language-server
-    ];
+    home.packages = [];
 
     local.git = {
       userName = "Boris Bera";
       userEmail = "bbera@coveo.com";
     };
-
-    local.vscode = {
-      enable = true;
-      iac.enable = true;
-      github-actions.enable = true;
-      go.enable = true;
-      javascript.enable = true;
-      nix.enable = true;
-      python.enable = true;
-      shell.enable = true;
-      web.enable = true;
-    };
+    programs.git.ignores = [
+      ".claude/settings.local.json"
+      ".claude/worktrees/"
+    ];
 
     # There's an automation that keeps editing / replacing this file.
     # It all ends up working out so it's probably fine.
