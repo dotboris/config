@@ -20,10 +20,6 @@
       url = "github:dotboris/cdo";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # nixpkgs doesn't have a working build for this yet so we use this flake
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
