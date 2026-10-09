@@ -10,7 +10,6 @@
       self.homeModules.llms
       self.homeModules.k8s
       self.homeModules.shell
-      self.homeModules.vscode
     ];
 
     home.username = "dotboris";
@@ -19,22 +18,6 @@
     local.git = {
       userName = "Boris Bera";
       userEmail = "boris@dotboris.io";
-    };
-    # local.llms = {
-    #   enable = true;
-    #   enableFlm = true;
-    # };
-    local.vscode = {
-      enable = true;
-      github-actions.enable = true;
-      go.enable = true;
-      iac.enable = true;
-      javascript.enable = true;
-      nix.enable = true;
-      python.enable = true;
-      rust.enable = true;
-      shell.enable = true;
-      web.enable = true;
     };
 
     home.stateVersion = "26.05"; # Only change this if a warning tells you to!
