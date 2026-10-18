@@ -14,6 +14,10 @@
         # Day to day utils
         inputs.cdo.packages.${system}.default
 
+        pkgs.file
+        pkgs.zip
+        pkgs.unzip
+        pkgs._7zip-zstd
         pkgs.ripgrep
         pkgs.fd
         pkgs.sd
