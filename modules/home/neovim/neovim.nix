@@ -15,6 +15,13 @@
         };
         severity_sort = true;
       };
+      files = {
+        "ftplugin/templ.lua" = {
+          localOpts = {
+            expandtab = false;
+          };
+        };
+      };
       filetype.extension = {
         mdx = "markdown";
       };
@@ -147,6 +154,7 @@
           rust_analyzer.enable = true;
           statix.enable = true; # nix linter
           tailwindcss.enable = true;
+          templ.enable = true; # JSX like syntax for go
           terraform-ls.enable = true;
           ts_ls.enable = true;
           yamlls.enable = true;
@@ -189,6 +197,8 @@
             };
           };
         };
+        # A bunch of community maintained snippets
+        friendly-snippets.enable = true;
         gitsigns = {
           enable = true;
           settings = {
