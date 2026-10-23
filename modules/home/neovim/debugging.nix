@@ -101,7 +101,14 @@
             dapStopped.texthl = "OkMsg";
           };
         };
-        dap-python.enable = true;
+        dap-python = {
+          enable = true;
+          # We set this using `pkgs` from our `nixpkgs` because the one in
+          # `nixvim` doesn't actually build on macos. TODO: remove this when
+          # fixed upstream
+          adapterPythonPath =
+            lib.getExe (pkgs.python3.withPackages (ps: [ps.debugpy]));
+        };
         dap-go.enable = true;
         dap-view = {
           enable = true;
