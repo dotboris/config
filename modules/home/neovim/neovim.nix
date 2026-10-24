@@ -138,6 +138,27 @@
           bashls.enable = true;
           codebook.enable = true; # spell checking
           cssls.enable = true;
+          emmet_language_server = {
+            enable = true;
+            config = {
+              filetypes = [
+                "astro"
+                "css"
+                "eruby"
+                "html"
+                "htmlangular"
+                "htmldjango"
+                "javascriptreact"
+                "less"
+                "sass"
+                "scss"
+                "svelte"
+                "templ"
+                "typescriptreact"
+                "vue"
+              ];
+            };
+          };
           eslint.enable = true;
           fish_ls.enable = true;
           golangci_lint_ls.enable = true;
